@@ -6,6 +6,7 @@ plus(3,7)
 if __name__ == "__main__":
     print('Выполнен с помощью if_name_main.py')
 
+
 # print(__name__)
 # print('Hello W')
 
