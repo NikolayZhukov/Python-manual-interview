@@ -2,8 +2,9 @@ def plus(a,b):
     print(a+b)
 
 
-plus(3,7)
+
 if __name__ == "__main__":
+    plus(3, 7)
     print('Выполнен с помощью if_name_main.py')
 
 
