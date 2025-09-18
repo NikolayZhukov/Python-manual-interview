@@ -1,5 +1,21 @@
 # import pytest
 #
+
+# my_list = [i*i for i in range(10)]
+# print(my_list)
+#
+# squares = [x * x for x in range(5)]
+# print(squares)
+#
+# plus = [x + x for x in range(5)]
+# print(plus)
+
+even_squares = [x * x for x in range(10) if x % 2 == 0]
+print(even_squares)
+
+even_squares = [x * x for x in range(100) if x % 2 == 0]
+print(even_squares)
+
 # def search_python_tutorials():
 #     # Заглушка для поиска
 #     return ['Python tutorial', 'Python documentation', 'Python examples', 'Python tips']
