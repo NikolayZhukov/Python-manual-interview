@@ -10,11 +10,21 @@
 # plus = [x + x for x in range(5)]
 # print(plus)
 
-even_squares = [x * x for x in range(10) if x % 2 == 0]
-print(even_squares)
+# even_squares = [x * x for x in range(10) if x % 2 == 0]
+# print(even_squares)
 
-even_squares = [x * x for x in range(100) if x % 2 == 0]
-print(even_squares)
+# even_squares = [x * x for x in range(100) if x % 2 == 0]
+# print(even_squares)
+
+squares = (x * x for x in range(10))
+print(squares)         # <generator object ...>
+print(next(squares))   # 0
+print(next(squares))  # 1
+
+sum = 155
+sum_repr =
+print()
+
 
 # def search_python_tutorials():
 #     # Заглушка для поиска

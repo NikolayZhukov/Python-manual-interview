@@ -1,3 +1,13 @@
+# class Person:
+#     def __init__(self, name):
+#         self.name = name
+#
+# p = Person("Alice")
+#
+# print(repr(p))       # <__main__.Person object at 0x7f...>
+# print(p.__repr__())
+
+
 class Person:
     def __init__(self, name, age):
         self.name = name
@@ -10,7 +20,19 @@ class Person:
         return f'{self.name}, {self.age} years old'
 
 person = Person('Alice', 30)
-print(person)  # Вывод: Alice, 30 years old
+print(repr(person))
+print(person.name)
+
+
+# class Person:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#
+# person = Person('Alice', 30)
+# print(repr(person))
+# # print(repr(person.name))
+
 
 
 
