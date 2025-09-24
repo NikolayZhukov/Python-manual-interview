@@ -1,9 +1,48 @@
-t = float(input())
-position_time = t % 5
-if position_time > 3:
-    print('red')
+numbers = list(map(int, input().split()))
+a = numbers[0]
+b = numbers[1]
+c = numbers[2]
+
+if a <= b and a <= c:
+    print(a)
+elif b <= a and b <= c:
+    print(b)
 else:
-    print('green')
+    print(c)
+
+
+
+
+# m = ['1. Введение в Python',
+# '2. Строки и списки',
+# '3. Условные операторы',
+# '4. Циклы',
+# '5. Словари, кортежи и множества',
+# '6. Выход']
+#
+# number = int(input())
+# number = str(number)
+#
+# if number in m[0]:
+#     print(m[0])
+# elif number in m[1]:
+#     print(m[1])
+# elif number in m[2]:
+#     print(m[2])
+# elif number in m[3]:
+#     print(m[3])
+# elif number in m[4]:
+#     print(m[4])
+# elif number in m[5]:
+#     print(m[5])
+
+
+# t = float(input())
+# position_time = t % 5
+# if position_time > 3:
+#     print('red')
+# else:
+#     print('green')
 
 
 # number = list(map(int, input()))
