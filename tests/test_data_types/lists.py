@@ -1,34 +1,97 @@
-b = [1, 5, 88, [21, 13], 5, 77]
-print(b.index(5, 3))
+users = list(map(int, input().split()))
+users = sorted(users, reverse=True)
+print(*users)
+
+# users = list(map(int, input().split()))
+# print(f'{max(users)} {min(users)} {sum(users)}')
 
 
-# a = [2, 4, 99]
-# b = a[:]
-# print(b)
-
-# a = [2, 4, 99]
-# b = (a.copy())
-# print(id(b))
-# print(id(a))
-
-# b = [1, 5, 88, [21, 13]]
-# cut = b.pop(0)
-# print(cut)
 
 
-# t = [4.5, 2, 7, 8, 16]
-# print(len(t))
-# print(sum(t))
-# average = sum(t) / len(t)
-# print(average)
+# name = input()
+# writer = input()
+# number_pages = int(input())
+# price = float(input())
+# book = [name, writer, number_pages, price]
+# del(book[2])
+# book[1] = "Пушкин"
+# book[-1] = book[-1] * 2
+# print(book)
 
-# c = [2, 4, 99]
-# c2 = list(c)
-# print(id(c))
-# print(id(c2))
+# marks = list(map(int, input().split()))
+# print(f'{sum(marks) / len(marks):.1f}')
+
+# cities = input().split()
+# print(cities[-1])
+
+# cities = input().split()
+# a = 'Москва'
+# print(a in cities)
+
+# s = input()
+# s1 = s.split()
+# lst = list(map(int, s1))
+# lst = list(map(int, input().split()))
+# print(lst)
+
+
+# t = [["Скажи-ка", "дядя", "ведь", "не", "даром"],
+#      ["Я", "Python", "выучил", "с", "каналом"],
+#      ["Балакирев", "что", "раздавал?"]]
+#
+# word = input()
+# print(word in t[0] or word in t[1] or word in t[2])
+
+# a = [True, [1, 0, ["True", ["Истина", "Ложь"], "F"]], False]
+# print(a[1][2][2])
+
+# r1 = input()
+# r2 = input()
+# r3 = input()
+#
+# general_list = []
+# r1list = list(r1.split())
+# r2list = list(r2.split())
+# r3list = list(r3.split())
+#
+# general_list.append(r1list + r2list + r3list)
+# print(r1list[3], r2list[3], r3list[3])
+# print(general_list)
+
+# s1 = input()
+# s2 = input()
+# s3 = input()
+# print(list(s1))
+
+# s1 = input()
+# s2 = input()
+# s3 = input()
+# lst = []
+# s1new = s1.split(" ")
+# s2new = s2.split(" ")
+# s3new = s3.split(" ")
+# lst.append(s1new)
+# lst.append(s2new)
+# lst.append(s3new)
+# print(lst)
+
+# squares = list(map(lambda x: x**2, [1, 2, 3]))
+# print(squares)
+
+# words = ["hello", "world", "python"]
+# upper_words = map(str.upper, words)
+# print(list(upper_words))  # ['HELLO', 'WORLD', 'PYTHON']
+
+# lst = [5.4, 6.7, 10.4]
+# digs = list(map(int, input().split()))
+# lst.append(digs)
+# print(lst)
 
 # import pytest
-#
+
+# a1 = [1, 2, [55, 7, 88, [99, 111, 1077], 91], 44, 84]
+# print(a1[2][3][2])
+
 
 # my_list = [i*i for i in range(10)]
 # print(my_list)
@@ -49,10 +112,6 @@ print(b.index(5, 3))
 # print(squares)         # <generator object ...>
 # print(next(squares))   # 0
 # print(next(squares))  # 1
-#
-# sum = 155
-# sum_repr =
-# print()
 
 
 # def search_python_tutorials():
