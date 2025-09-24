@@ -1,8 +1,10 @@
+
+
 # print("ab" in "abra")
 
-print("A" < "a")
-print(ord("A"))
-print(ord("a"))
+# print("A" < "a")
+# print(ord("A"))
+# print(ord("a"))
 
 # a = [5]
 # b = [5]

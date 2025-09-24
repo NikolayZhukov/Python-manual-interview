@@ -1,11 +1,25 @@
-users = list(map(int, input().split()))
-users = sorted(users, reverse=True)
-print(*users)
+
+
+# s = input()
+# lst = s.split()
+# cities = ["Москва", "Тверь", "Вологда"]
+# # lst.extend(cities)
+# lst = lst + cities
+# print(*lst)
+#
+# s = input()
+# lst = s.split()
+# cities = ["Москва", "Тверь", "Вологда"]
+# lst = cities + lst
+# print(*lst)
+
+
+# users = list(map(int, input().split()))
+# users = sorted(users, reverse=True)
+# print(*users)
 
 # users = list(map(int, input().split()))
 # print(f'{max(users)} {min(users)} {sum(users)}')
-
-
 
 
 # name = input()
