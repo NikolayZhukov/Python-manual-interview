@@ -1,8 +1,18 @@
-cities = input().split()
+n = int(input())
+sum = 0
 
-for i in range(len(cities)):
-    cities[i]=len(cities[i])
-    print(cities[i], end=' ')
+for i in range(n):
+    if i % 3 == 0 or i % 5 == 0:
+        sum += i
+print(sum)
+
+
+
+# cities = input().split()
+#
+# for i in range(len(cities)):
+#     cities[i]=len(cities[i])
+#     print(cities[i], end=' ')
 
 
 # n = list(map(int, input().split()))
