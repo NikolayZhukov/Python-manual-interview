@@ -1,3 +1,7 @@
+# print(hash(("hello", "hello", "hello")))
+print(hash("hello"))
+
+
 # cars = {'1': 'black', '2': 'white', '3': 'red'}
 # for k in cars.items():
 #     print(k)
