@@ -1,5 +1,67 @@
-fruits_set = {'apple', 'banana', 'cherry'}
-print(fruits_set)
+lst2D = [
+    row1 := [1, 2, 3],
+    row2 := [4, 5, 6],
+    row3 := [7, 8, 9],
+]
+
+row2[1] = 100
+print(lst2D)
+
+
+
+# import sys
+#
+# lst_in = list(map(str.strip, sys.stdin.readlines()))
+#
+# lst_in = set(lst_in)
+# print(len(lst_in))
+
+
+
+
+# # Читаем входную строку
+# s = input()
+#
+# # Множество для хранения уникальных цифр
+# unique_digits = set()
+#
+# # Проходим по каждому символу строки
+# for char in s:
+#     # Проверяем, является ли символ цифрой
+#     if char.isdigit():
+#         unique_digits.add(char)
+#
+# # Если нашлись цифры
+# if unique_digits:
+#     # Преобразуем в список и сортируем
+#     sorted_digits = sorted(unique_digits)
+#     # Выводим через пробел
+#     # print(' '.join(sorted_digits))
+#     print(*sorted_digits)
+# else:
+#     # Если цифр нет
+#     print("НЕТ")
+
+
+# words = list(input().split())
+# words = " ".join(words)
+# words = words.lower()
+# words = list(words.split())
+#
+# words_unique = set(words)
+# print(len(words_unique))
+
+
+
+# s1 = list(map(float, input(). split()))
+# s = set(s1)
+# print(*sorted(s))
+
+
+
+
+# fruits_set = {'apple', 'banana', 'cherry'}
+# print(fruits_set)
 
 # numbers = {1,2,3,7,99}
 # print(type(numbers))
