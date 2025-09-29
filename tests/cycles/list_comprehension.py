@@ -1,4 +1,23 @@
+numbers = tuple(map(int, input().split()))
+numbers = list(numbers)
+index_list_not_unique = []
 
+for i, num in enumerate(numbers):
+    if numbers.count(num) > 1:
+        index_list_not_unique.append(i)
+
+print(*index_list_not_unique)
+
+
+
+
+# numbers = tuple(map(int, input().split()))
+# numbers_unique = []
+# for num in numbers:
+#     if num not in numbers_unique:
+#         numbers_unique.append(num)
+# numbers = tuple(numbers_unique)
+# print(*numbers_unique)
 
 
 # lst1 = input().split()

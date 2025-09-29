@@ -1,3 +1,6 @@
+fruits_set = {'apple', 'banana', 'cherry'}
+print(fruits_set)
+
 # numbers = {1,2,3,7,99}
 # print(type(numbers))
 #
