@@ -1,12 +1,51 @@
-digs = list(map(int, input().split()))
-a1 = max(digs)
-b1 = min(digs)
 
-def multiply(a, b):
-    sum = a * b
-    return sum
 
-print(multiply(a1, b1))
+# s = input()
+# element = lambda x, s: True if x in s else False
+# print(element('ra', s))
+
+
+# x = float(input())
+#
+# abs_func = lambda x: abs(x)
+# print(abs_func(x))
+
+
+
+# get_sq = lambda x: x ** 2
+
+
+# get_div = lambda a, b: a / b if b != 0 else None
+
+# lst_c = input().split()
+# print(*lst_c,)
+#
+# cities = input().split()
+# lst_c = (*cities,)
+# print(lst_c)
+
+
+# def get_biggest_city(*args):
+#     return max(args, key=len)
+# print(get_biggest_city('Питер', 'Москва', 'Самара', 'Воронеж'))
+
+
+
+# def get_even(*args):
+#     even_list = [num for num in args if num % 2 == 0]
+#     return even_list
+
+
+
+# digs = list(map(int, input().split()))
+# a1 = max(digs)
+# b1 = min(digs)
+#
+# def multiply(a, b):
+#     sum = a * b
+#     return sum
+#
+# print(multiply(a1, b1))
 
 
 # cities = input().split()
