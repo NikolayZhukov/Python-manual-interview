@@ -1,4 +1,305 @@
 
+def add_start(tag='h1'):
+    def decorator_func(func):
+        def wrapper(s):
+            result = func(s)
+            return f'<{tag}>{result}</{tag}>'
+        return wrapper
+    return decorator_func
+
+
+@add_start('div')
+def make_lower(s):
+    return s.lower()
+
+s = input()
+print(make_lower(s))
+
+
+
+# def tag_decorator(tag="h1"):
+#     def decorator(func):
+#         def wrapper(s):
+#             result = func(s)
+#             return f"<{tag}>{result}</{tag}>"
+#         return wrapper
+#     return decorator
+
+# @tag_decorator("div")
+# def to_lowercase(s):
+#     return s.lower()
+
+# s = input()
+# print(to_lowercase(s))
+
+
+# num = input()
+
+# def add_start(start):
+#     def decorator(func):
+#         def wrapper(*args, **kwargs):
+#             result = func(*args, **kwargs)
+#             return result + start
+#         return wrapper
+#     return decorator
+#
+# @add_start(start=5)
+# def sum_num(lst):
+#     sum_number = sum(map(int, num.split()))
+#     return sum_number
+#
+# print(sum_num(num))
+
+
+# from functools import wraps
+#
+# def my_decorator(func):
+#     @wraps(func)  # ← Вот он!
+#     def wrapper(*args, **kwargs):
+#         """Документация wrapper"""
+#         print(f"Вызывается функция: {func.__name__}")
+#         return func(*args, **kwargs)
+#     return wrapper
+#
+# @my_decorator
+# def hello(name):
+#     """Приветствует пользователя"""
+#     return f"Привет, {name}!"
+#
+# # Теперь метаданные сохранились
+# print(hello.__name__)  # Вывод: hello ✅
+# print(hello.__doc__)   # Вывод: Приветствует пользователя ✅
+#
+# # Функция работает как обычно
+# result = hello("Анна")
+# # Вывод: Вызывается функция: hello
+# print(result)  # Вывод: Привет, Анна!
+
+
+# def sort_func(func):
+#     def wrapper(*args, **kwargs):
+#         res = func(*args, **kwargs)
+#         keys, values = res
+#         d = {keys[i]: values[i] for i in range(len(keys))}
+#         print(*sorted(d.items()))
+#     return wrapper
+#
+# @sort_func
+# def make_list(x, y):
+#     lst_1 = x.split()
+#     lst_2 = y.split()
+#     tuple_conv = (lst_1, lst_2)
+#     return tuple_conv
+#
+# line_1 = input()
+# line_2 = input()
+# make_list(line_1, line_2)
+
+
+
+# def sort_func(func):
+#     def wrapper(y):
+#         lst_1 = func(y)
+#         f_r = sorted(lst_1, )
+#         return f_r
+#     return wrapper
+#
+# @sort_func
+# def make_list(x):
+#     lst = list(x)
+#     return lst
+#
+# num = map(int, input().split())
+# print(*make_list(num))
+
+
+
+
+# def show_menu(func):
+#     def wrapper(s):
+#         menu_list = func(s)
+#         print(s)
+#         print(menu_list)
+#         for i, item in enumerate(menu_list, start=1):
+#             print(f"{i}. {item}")
+#         return menu_list
+#     return wrapper
+#
+# @show_menu
+# def get_menu(s):
+#     return s.split()
+#
+# menu = input()
+# get_menu(menu)
+
+
+# def func_show(func):
+#     def wrapper(width, height):
+#         result = func(width, height)
+#         print(f"Площадь прямоугольника: {result}")
+#         return result
+#     return wrapper
+#
+# @func_show
+# def get_sq(width, height):
+#     return width * height
+#
+# # Ввод и вызов в две строки
+# width, height = map(int, input().split())
+# get_sq(width, height)
+
+
+
+# def func_show(func):
+#     def wrapper(width, height):
+#         result = func(width, height)
+#         print(f"Площадь прямоугольника: {result}")
+#         return result
+#     return wrapper
+#
+# def get_sq(width, height):
+#     return width * height
+
+
+
+# def outer_func(tp):
+#     def inner_func(input_value):
+#         if tp == 'list':
+#             input_value = list(input_value)
+#         else:
+#             input_value = tuple(input_value)
+#         return input_value
+#     return inner_func
+#
+# k = input()
+# m = map(int, input().split())
+#
+# t = outer_func(k)
+# print(t(m))
+
+
+# def outer_func(tag):
+#     def inner_func(value_tag):
+#         result = f'<{tag}>{value_tag}</{tag}>'
+#         return result
+#     return inner_func
+#
+# k = input()
+# m = input()
+#
+# t = outer_func(k)
+# print(t(m))
+
+
+
+# def outer_func():
+#     def inner_func(input_str):
+#         result = f'<h1>{input_str}</h1>'
+#         return result
+#     return inner_func
+#
+# k = input()
+# t = outer_func()
+# print(t(k))
+
+
+# def counter_add(n, start=0):
+#     def increment_counter():
+#         nonlocal start
+#         nonlocal n
+#         start += n
+#         return start
+#     return increment_counter
+#
+# k = int(input())
+# cnt = counter_add(2, k)
+# print(cnt())
+
+
+
+
+# def counter_add(n, start=0):
+#     def increment_counter():
+#         nonlocal start
+#         nonlocal n
+#         start += n
+#         return start
+#     return increment_counter
+#
+# k = int(input())
+# cnt = counter_add(2, k)
+# print(cnt())
+
+
+
+# def counter_add(start=0):
+#     def increment_counter():
+#         nonlocal start
+#         start += 5
+#         return start
+#     return increment_counter
+#
+# k = int(input())
+# cnt = counter_add(k)
+# print(cnt())
+
+
+
+# def counter(start=0):
+#     def step():
+#         nonlocal start
+#         start += 1
+#         return start
+#
+#     return step
+#
+# c1 = counter()
+# c2 = counter(3)
+# c3 = counter(6)
+# c4 = counter(9)
+
+# print(c1(), c2(), c3(), c4())
+# print(c1(), c2(), c3(), c4())
+# print(c1(), c2(), c3(), c4())
+
+
+
+
+
+
+# def say_name(name):
+#     def say_goodbye():
+#         print("Don't say me goodbye, " + name + "!")
+#
+#     return say_goodbye
+#
+# f = say_name("Sergey")
+# f2 = say_name("Python")
+# f()
+# f2()
+#
+# def say_name(name):
+#     return ("Don't say me goodbye, " + name + "!")
+# f = print(say_name("Sergey"))
+# f2 = print(say_name("Python"))
+
+# f()
+# f2()
+
+
+# def create_global(x):
+#     global TOTAL
+#     TOTAL = x
+#     return TOTAL
+#
+#
+# WIDTH = int(input())
+# def func1():
+#     global WIDTH
+#     WIDTH = 13
+#     return WIDTH
+# print(func1())
+
 
 # s = input()
 # element = lambda x, s: True if x in s else False
