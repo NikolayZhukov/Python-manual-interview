@@ -1,5 +1,12 @@
-a = (i*i for i in range(10**2))
-print(a)
+a = (i*i for i in range(5))
+
+print("Первый проход:")
+for i in a:
+    print(i)  # Выведет 0, 1, 4, 9, 16
+
+print("Второй проход:")
+for i in a:
+    print(i)  # НИЧЕГО не выведет! Генератор уже исчерпан
 
 # print("ab" in "abra")
 
