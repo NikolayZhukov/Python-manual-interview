@@ -321,12 +321,10 @@ class Rectangle:
 
     @decorator_func
     def calculate_area_rectangle(self, length, width):
-        # print(f'calculate_area_rectangle = ', length * width)
         return length * width
 
-    def calculate_area(self):
-        # print(f'calculate_area = ', self.calculate_area_rectangle(self.length, self.width))
-        return self.calculate_area_rectangle(self.length, self.width)
+    # def calculate_area(self):
+    #     return self.calculate_area_rectangle(self.length, self.width)
 
 
 # Запрос у пользователя количества прямоугольников
@@ -342,7 +340,8 @@ for i in range(num_rectangles):
 
 # Вызовы
 for rect in rectangles:
-    rect.calculate_area()
+    # rect.calculate_area()
+    rect.calculate_area_rectangle(rect.length, rect.width)
 
 
 
