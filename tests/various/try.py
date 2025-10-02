@@ -16,13 +16,15 @@
 # division()
 
 
-# try:
-#     f = open("data.txt", "r")
-#     content = f.read()
-# except FileNotFoundError:
-#     print("Файл не найден")
-# except PermissionError:
-#     print("Нет доступа к файлу")
+try:
+    f = open("data.txt", "r")
+    content = f.read()
+except FileNotFoundError:
+    print("Файл не найден")
+except PermissionError:
+    print("Нет доступа к файлу")
+except:
+    print('Произошла ошибка')
 
 
 
