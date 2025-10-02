@@ -66,8 +66,8 @@
 #     return f"Привет, {name}!"
 #
 # # Теперь метаданные сохранились
-# print(hello.__name__)  # Вывод: hello ✅
-# print(hello.__doc__)   # Вывод: Приветствует пользователя ✅
+# print(hello.__name__)  # Вывод: hello
+# print(hello.__doc__)   # Вывод: Приветствует пользователя
 #
 # # Функция работает как обычно
 # result = hello("Анна")
@@ -110,7 +110,6 @@
 #
 # num = map(int, input().split())
 # print(*make_list(num))
-
 
 
 
@@ -158,3 +157,53 @@
 #
 # def get_sq(width, height):
 #     return width * height
+#
+# # Ввод и вызов в две строки
+# width, height = map(int, input().split())
+# get_sq = func_show(get_sq)
+# get_sq(width, height)
+
+
+
+# def func_show(func):
+#     def wrapper(width, height):
+#         result = func(width, height)
+#         print(f"Площадь прямоугольника: {result}")
+#         return result
+#     return wrapper
+#
+# def get_sq(width, height):
+#     return width * height
+
+
+
+
+"""Структура декораторов без передачи аргументов в декораторы, 
+здесь аргументы передаются только в саму декорируемую функцию"""
+
+def decorator_func(func):
+    def wrapper_func(a, b):
+        result = func(a, b)
+        print('До декорируемой функции')
+        print('Площадь прямоугольника равна = ', result)
+        print('После декорируемой функции')
+    return wrapper_func
+
+user_input_length = int(input('Введите длину: '))
+user_input_width = int(input('Введите ширину: '))
+
+# def calculate_area_rectangle(length, width):
+#     return length * width
+
+"""Два способа декорирования функции"""
+"""1 способ - передать саму функцию (без скобочек и аргументов) в декоратор"""
+# calculate_area_rectangle = decorator_func(calculate_area_rectangle)
+# calculate_area_rectangle(user_input_length, user_input_width)
+
+
+"""2 способ - с помощью @decorator_function над декорируемой функцией"""
+@decorator_func
+def calculate_area_rectangle(length, width):
+    return length * width
+
+calculate_area_rectangle(user_input_length, user_input_width)
