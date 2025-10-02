@@ -216,6 +216,19 @@
 - без передачи аргументов в декораторы, 
 - здесь аргументы передаются только в саму декорируемую функцию"""
 
+
+# def uppercase(func):
+#     def wrapper():
+#         return func().upper()
+#     return wrapper
+#
+# @uppercase
+# def hello():
+#     return "hello"
+#
+# print(hello())
+
+
 # def decorator_func(func):
 #     def wrapper_func(a, b):
 #         result = func(a, b)
