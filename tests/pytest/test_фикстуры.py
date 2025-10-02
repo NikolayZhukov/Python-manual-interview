@@ -1,4 +1,4 @@
-import pyte?st
+import pytest
 
 # фикстура
 @pytest.fixture
