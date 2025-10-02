@@ -227,7 +227,7 @@
 #
 # user_input_length = int(input('Введите длину: '))
 # user_input_width = int(input('Введите ширину: '))
-
+#
 # def calculate_area_rectangle(length, width):
 #     return length * width
 
@@ -269,32 +269,84 @@
 
 
 """ 4. Декораторы с аргументами"""
-def decorator_func_with_args(show_before, show_after):
-    def decorator_func(func):
-        def wrapper_func(a, b):
-            if show_before:
-                print('До декорируемой функции')
-            result = func(a, b)
-            print('Результат =', result)
-            if show_after:
-                print('После декорируемой функции')
-            return result
-        return wrapper_func
-    return decorator_func
+# def decorator_func_with_args(show_before, show_after):
+#     def decorator_func(func):
+#         def wrapper_func(a, b):
+#             if show_before:
+#                 print('До декорируемой функции')
+#             result = func(a, b)
+#             print('Результат =', result)
+#             if show_after:
+#                 print('После декорируемой функции')
+#             return result
+#         return wrapper_func
+#     return decorator_func
+#
+#
+# @decorator_func_with_args(show_before=False, show_after=False)  # передаем аргументы в декоратор
+# def calculate_area_rectangle(length, width):
+#     return length * width
+#
+#
+# user_input_length = int(input('Введите длину: '))
+# user_input_width = int(input('Введите ширину: '))
+#
+# calculate_area_rectangle(user_input_length, user_input_width)
 
-
-@decorator_func_with_args(show_before=False, show_after=False)  # передаем аргументы в декоратор
-def calculate_area_rectangle(length, width):
-    return length * width
-
-
-user_input_length = int(input('Введите длину: '))
-user_input_width = int(input('Введите ширину: '))
-
-calculate_area_rectangle(user_input_length, user_input_width)
 
 
 """ 5. Декоратор метода в классе - с передачей self"""
+
+def decorator_func(func):
+    def wrapper_func(self, a, b):
+        print(f'--- Прямоугольник {self.color} ---')
+        print('До декорируемой функции')
+        result = func(self, a, b)
+        print('Результат = ', result)
+        print('После декорируемой функции')
+        return result
+    return wrapper_func
+
+
+class Rectangle:
+    def __init__(self, color):
+        self.length = None
+        self.width = None
+        self.color = color
+
+    def input_dimensions(self):
+        print(f"\nВведите размеры для {self.color} прямоугольника:")
+        self.length = int(input("Длина: "))
+        self.width = int(input("Ширина: "))
+
+    @decorator_func
+    def calculate_area_rectangle(self, length, width):
+        # print(f'calculate_area_rectangle = ', length * width)
+        return length * width
+
+    def calculate_area(self):
+        # print(f'calculate_area = ', self.calculate_area_rectangle(self.length, self.width))
+        return self.calculate_area_rectangle(self.length, self.width)
+
+
+# Запрос у пользователя количества прямоугольников
+num_rectangles = int(input("Сколько прямоугольников хотите создать? "))
+
+rectangles = []
+
+for i in range(num_rectangles):
+    color = input(f"\nВведите цвет {i+1}-го прямоугольника: ")
+    rect = Rectangle(color)
+    rect.input_dimensions()
+    rectangles.append(rect)
+
+# Вызовы
+for rect in rectangles:
+    rect.calculate_area()
+
+
+
+
 
 
 
