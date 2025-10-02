@@ -176,34 +176,126 @@
 #     return width * height
 
 
+"""Пример"""
+
+# def decorator_func(func):
+#     def wrapper_func(a, b):
+#         result = func(a, b)
+#         print('До декорируемой функции')
+#         print('Результат = ', result)
+#         print('После декорируемой функции')
+#         return result
+#     return wrapper_func
+#
+# @decorator_func
+# def calculate_area_rectangle(length, width):
+#     return length * width
+#
+# user_input_length = int(input('Введите длину: '))
+# user_input_width = int(input('Введите ширину: '))
+#
+# calculate_area_rectangle(user_input_length, user_input_width)
 
 
-"""Структура декораторов без передачи аргументов в декораторы, 
-здесь аргументы передаются только в саму декорируемую функцию"""
 
-def decorator_func(func):
-    def wrapper_func(a, b):
-        result = func(a, b)
-        print('До декорируемой функции')
-        print('Площадь прямоугольника равна = ', result)
-        print('После декорируемой функции')
-    return wrapper_func
 
-user_input_length = int(input('Введите длину: '))
-user_input_width = int(input('Введите ширину: '))
+
+"""Декораторы"""
+
+""" 
+Оглавление 
+1. Структура декораторов
+2. Два способа декорирования функции
+3. Максимально универсальный декоратор - сколько угодно аргументов: *args, **kwargs
+4. Декораторы с аргументами
+5. Декоратор метода в классе - с передачей self
+"""
+
+
+""" 1. Структура декораторов: 
+- без передачи аргументов в декораторы, 
+- здесь аргументы передаются только в саму декорируемую функцию"""
+
+# def decorator_func(func):
+#     def wrapper_func(a, b):
+#         result = func(a, b)
+#         print('До декорируемой функции')
+#         print('Результат = ', result)
+#         print('После декорируемой функции')
+#         return result
+#     return wrapper_func
+#
+# user_input_length = int(input('Введите длину: '))
+# user_input_width = int(input('Введите ширину: '))
 
 # def calculate_area_rectangle(length, width):
 #     return length * width
 
-"""Два способа декорирования функции"""
+
+""" 2. Два способа декорирования функции"""
+
 """1 способ - передать саму функцию (без скобочек и аргументов) в декоратор"""
 # calculate_area_rectangle = decorator_func(calculate_area_rectangle)
 # calculate_area_rectangle(user_input_length, user_input_width)
 
 
 """2 способ - с помощью @decorator_function над декорируемой функцией"""
-@decorator_func
+# @decorator_func
+# def calculate_area_rectangle(length, width):
+#     return length * width
+#
+# calculate_area_rectangle(user_input_length, user_input_width)
+
+
+
+""" 3. Максимально универсальный декоратор - сколько угодно аргументов или без аргументов"""
+# def decorator_func(func):
+#     def wrapper_func(*args, **kwargs):
+#         result = func(*args, **kwargs)
+#         print('До декорируемой функции')
+#         print('Результат = ', result)
+#         print('После декорируемой функции')
+#         return result
+#     return wrapper_func
+#
+# @decorator_func
+# def calculate_area_rectangle(length, width):
+#     return length * width
+#
+# user_input_length = int(input('Введите длину: '))
+# user_input_width = int(input('Введите ширину: '))
+#
+# calculate_area_rectangle(user_input_length, user_input_width)
+
+
+""" 4. Декораторы с аргументами"""
+def decorator_func_with_args(show_before, show_after):
+    def decorator_func(func):
+        def wrapper_func(a, b):
+            if show_before:
+                print('До декорируемой функции')
+            result = func(a, b)
+            print('Результат =', result)
+            if show_after:
+                print('После декорируемой функции')
+            return result
+        return wrapper_func
+    return decorator_func
+
+
+@decorator_func_with_args(show_before=False, show_after=False)  # передаем аргументы в декоратор
 def calculate_area_rectangle(length, width):
     return length * width
 
+
+user_input_length = int(input('Введите длину: '))
+user_input_width = int(input('Введите ширину: '))
+
 calculate_area_rectangle(user_input_length, user_input_width)
+
+
+""" 5. Декоратор метода в классе - с передачей self"""
+
+
+
+
