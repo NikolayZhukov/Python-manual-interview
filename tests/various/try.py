@@ -1,5 +1,13 @@
 import pytest
 
+# run_tests.py
+import subprocess
+import sys
+from datetime import datetime
+
+
+
+
 """Пример использования raise ValueError без pytest"""
 def calculate_age(birth_year):
     if birth_year > 2024:
