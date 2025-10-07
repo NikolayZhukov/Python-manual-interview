@@ -12,7 +12,7 @@ from datetime import datetime
 def calculate_age(birth_year):
     if birth_year > 2024:
         raise ValueError("Год рождения не может быть в будущем")
-    if birth_year < 1900:
+    if birth_year < 1800:
         raise ValueError("Слишком старый год рождения")
 
     return 2024 - birth_year
