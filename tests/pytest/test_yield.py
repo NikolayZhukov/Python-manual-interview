@@ -17,13 +17,17 @@ def sample_data():
 
 
 def test_sum(sample_data):
-    print("\n2) Выполняется сама функция")
+    print("\n2) Выполняется сама функция Сумма")
     assert sum(sample_data) == 6
 
 
 def test_len(sample_data):
-    print("\n2) Выполняется сама функция")
+    print("\n2) Выполняется сама функция Длина")
     assert len(sample_data) > 0
+
+def test_sum_divide(sample_data):
+    print('\n3) Выполняется сама функция Умножение')
+    assert sum(sample_data) / 2 == 3
 
 
 
