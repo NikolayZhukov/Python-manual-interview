@@ -33,6 +33,14 @@ def test_sum_divide_three(sample_data):
     print('\n3) Выполняется сама функция Умножение')
     assert sum(sample_data) / 3 == 2
 
+def test_sum_divide_one(sample_data):
+    print('\n3) Выполняется сама функция Умножение')
+    assert sum(sample_data) / 1 == 6
+
+
+
+
+
 
 
 
