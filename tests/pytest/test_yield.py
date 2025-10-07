@@ -15,11 +15,9 @@ def sample_data():
     yield data
     print("\n3) Выполняется фикстура после теста")
 
-
 def test_sum(sample_data):
     print("\n2) Выполняется сама функция Сумма")
     assert sum(sample_data) == 6
-
 
 def test_len(sample_data):
     print("\n2) Выполняется сама функция Длина")
