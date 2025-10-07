@@ -1,3 +1,33 @@
+import pytest
+import os
+
+"""
+1. Пример фикстуры с yield, состоящий из трёх частей: 
+1) Действие перед функцией
+2) Сама функция
+3) Действие после функции
+"""
+
+@pytest.fixture
+def sample_data():
+    print("\n1) Выполняется фикстура перед тестом")
+    data = [1, 2, 3]
+    yield data
+    print("\n3) Выполняется фикстура после теста")
+
+
+def test_sum(sample_data):
+    print("\n2) Выполняется сама функция")
+    assert sum(sample_data) == 6
+
+
+def test_len(sample_data):
+    print("\n2) Выполняется сама функция")
+    assert len(sample_data) > 0
+
+
+
+
 ''' Очистка окружения с помощью фикстуры '''
 
 """
@@ -7,24 +37,22 @@
 """
 
 
-import pytest
-import os
 
-@pytest.fixture
-def temp_file():
-    # setup: создаём временный файл
-    filename = "temp.txt"
-    with open(filename, "w") as f:
-        f.write("hello")
-
-    # передаём имя файла в тест
-    yield filename
-
-    # teardown: удаляем файл после теста
-    if os.path.exists(filename):
-        os.remove(filename)
-
-
-def test_temp_file_exists(temp_file):
-    # тест получает temp_file = "temp.txt"
-    assert os.path.exists(temp_file)
+# @pytest.fixture
+# def temp_file():
+#     # setup: создаём временный файл
+#     filename = "temp.txt"
+#     with open(filename, "w") as f:
+#         f.write("hello")
+#
+#     # передаём имя файла в тест
+#     yield filename
+#
+#     # teardown: удаляем файл после теста
+#     if os.path.exists(filename):
+#         os.remove(filename)
+#
+#
+# def test_temp_file_exists(temp_file):
+#     # тест получает temp_file = "temp.txt"
+#     assert os.path.exists(temp_file)
