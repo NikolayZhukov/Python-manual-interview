@@ -8,7 +8,6 @@
 а всё, что идёт после — это teardown (очистка).
 """
 
-
 import pytest
 import os
 
