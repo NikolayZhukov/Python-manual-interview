@@ -45,13 +45,26 @@
 words = ["яблоко", "кот", "программирование", "собака", "электричество"]
 Напишите функцию, которая принимает этот список и возвращает новый список с самыми длинными словами.
 """
+# def find_longest_words(words):
+#     words_sorted = sorted(words, key=len, reverse=True)
+#     longest_word = words_sorted[0]
+#     words_longest_lst = []
+#     for word in words_sorted:
+#         if word == longest_word:
+#             words_longest_lst.append(word)
+#     return words_longest_lst
+#
+# words = ["яблоко", "кот", "программирование", "собака", "электричество"]
+# print(find_longest_words(words))
+
+"""
+То же самое с помощью генератора списков
+"""
+
 def find_longest_words(words):
     words_sorted = sorted(words, key=len, reverse=True)
     longest_word = words_sorted[0]
-    words_longest_lst = []
-    for word in words_sorted:
-        if word == longest_word:
-            words_longest_lst.append(word)
+    words_longest_lst = [word for word in words_sorted if word == longest_word]
     return words_longest_lst
 
 words = ["яблоко", "кот", "программирование", "собака", "электричество"]
