@@ -5,7 +5,6 @@
 2. Цикл while
 3. Уникальные значения (set)
 4. Sort - sorted
-5. Filter
 6. Match
 """
 
@@ -30,7 +29,6 @@
 # a = [1, -45, 3, 2, 100, -4]
 # a.reverse()
 # print(a)
-
 
 
 """
@@ -97,10 +95,10 @@ cities = ['москва', 'Уфа', 'Санкт-Петербург', 'красн
 cities = ['москва', 'Уфа', 'Санкт-Петербург', 'краснодар', 'Владивосток', 'СОЧИ', 'Магнитогорск']
 Создайте новый список, расставив города в алфавитном порядке c заглавными первыми буквами.
 """
-cities = ['москва', 'Уфа', 'Санкт-Петербург', 'краснодар', 'Владивосток', 'СОЧИ', 'Магнитогорск']
-cities_sorted = sorted(cities, key=lambda x: x.lower())
-cities_sorted_cap = [city.capitalize() for city in cities_sorted]
-print(cities_sorted_cap)
+# cities = ['москва', 'Уфа', 'Санкт-Петербург', 'краснодар', 'Владивосток', 'СОЧИ', 'Магнитогорск']
+# cities_sorted = sorted(cities, key=lambda x: x.lower())
+# cities_sorted_cap = [city.capitalize() for city in cities_sorted]
+# print(cities_sorted_cap)
 
 
 
