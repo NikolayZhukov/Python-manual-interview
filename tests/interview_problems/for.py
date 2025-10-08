@@ -89,3 +89,47 @@ words = ["яблоко", "кот", "программирование", "соба
 # words = ["яблоко", "кот", "программирование", "собака", "электричество"]
 # words_len = [len(word) for word in words]
 # print(words_len)
+
+
+"""
+1.5. Задача: "Сумма заработка за неделю"
+Иван ведет учет своего ежедневного заработка. У него есть список, где записано, 
+сколько денег он заработал каждый день недели. Однако некоторые дни он забывал делать записи,
+и вместо суммы у него стоит None.
+"""
+
+"1-й способ"
+# daily_earnings = [1200, None, 800, None, 1500, 2000, 1800]
+# sum_earnings = 0
+# for num in daily_earnings:
+#     if num == None:
+#         continue
+#     else:
+#         sum_earnings += num
+#
+# print(sum_earnings)
+
+"2-й способ"
+# daily_earnings = [1200, None, 800, None, 1500, 2000, 1800]
+# sum_earnings = 0
+# for num in daily_earnings:
+#     if num is not None:
+#         sum_earnings += num
+#
+# print(sum_earnings)
+
+
+"""
+1.6. 
+Создайте список с помощью функции range, состоящий из чисел от 1 до 10. 
+В ответе выведите сам список и количество содержащихся в нём чётных чисел.
+"""
+# lst = list(range(1, 11))
+# num_even = 0
+# for num in lst:
+#     if num % 2 == 0:
+#         num_even += 1
+# print(lst)
+# print(num_even)
+
+
