@@ -26,12 +26,12 @@ def test_len(sample_data):
     assert len(sample_data) > 0
 
 def test_sum_divide_two(sample_data):
-    print('\n3) Выполняется сама функция Умножение')
+    print('\n3) Выполняется сама функция')
     assert sum(sample_data) / 2 == 3
 
-def test_sum_divide_three(sample_data):
-    print('\n3) Выполняется сама функция Умножение')
-    assert sum(sample_data) / 3 == 2
+def test_sum_divide_six(sample_data):
+    print('\n3) Выполняется сама функция Деления')
+    assert sum(sample_data) / 6 == 1
 
 
 
