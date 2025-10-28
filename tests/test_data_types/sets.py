@@ -75,6 +75,7 @@
 # for i in numbers_set:
 #     print(i)
 
-# numbers = {1,2,3,7,99}
-# print(1 in numbers)
+numbers = {1,2,3,7,99,81,83,111,54,17,'asd'}
+# print(5 in numbers)
+print(numbers)
 

@@ -9,26 +9,26 @@ print(f"Исходный список: {my_list}")
 print(f"ID списка: {id(my_list)}")
 print(f"ID элементов списка: {[id(item) for item in my_list]}")
 print()
-
-# Меняем один элемент списка
-my_list[2] = "д"  # Заменяем "т" на "д"
-print(f"Измененный список: {my_list}")
-print(f"ID списка после изменения: {id(my_list)}")
-print(f"ID элементов списка после изменения: {[id(item) for item in my_list]}")
-print()
-
-new_list1 = my_list + ['Чёрный1']
-print(f'my_list - {my_list}')
-print(f'new_list1 - {new_list1}')
-
-new_list2 = my_list.copy()
-new_list2.append('Чёрный2')
-print(f'my_list - {my_list}')
-print(f'new_list2 - {new_list2}')
-
-
-# Проверяем, изменился ли id списка
-print(f"ID списка остался прежним: {id(my_list) == id(my_list)}")
+#
+# # Меняем один элемент списка
+# my_list[2] = "д"  # Заменяем "т" на "д"
+# print(f"Измененный список: {my_list}")
+# print(f"ID списка после изменения: {id(my_list)}")
+# print(f"ID элементов списка после изменения: {[id(item) for item in my_list]}")
+# print()
+#
+# new_list1 = my_list + ['Чёрный1']
+# print(f'my_list - {my_list}')
+# print(f'new_list1 - {new_list1}')
+#
+# new_list2 = my_list.copy()
+# new_list2.append('Чёрный2')
+# print(f'my_list - {my_list}')
+# print(f'new_list2 - {new_list2}')
+#
+#
+# # Проверяем, изменился ли id списка
+# print(f"ID списка остался прежним: {id(my_list) == id(my_list)}")
 
 
 
