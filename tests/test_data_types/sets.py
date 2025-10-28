@@ -1,4 +1,12 @@
 
+"""симметричная разность"""
+setA = {1,2,3,4}
+setB = {3,4,5,6,7}
+setC = setA ^ setB
+print(setC)
+
+
+
 # import sys
 #
 # lst_in = list(map(str.strip, sys.stdin.readlines()))
@@ -75,7 +83,7 @@
 # for i in numbers_set:
 #     print(i)
 
-numbers = {1,2,3,7,99,81,83,111,54,17,'asd'}
-# print(5 in numbers)
-print(numbers)
+# numbers = {1,2,3,7,99,81,83,111,54,17,'asd'}
+# # print(5 in numbers)
+# print(numbers)
 
