@@ -1,12 +1,12 @@
-numbers = tuple(map(int, input().split()))
-numbers = list(numbers)
-index_list_not_unique = []
-
-for i, num in enumerate(numbers):
-    if numbers.count(num) > 1:
-        index_list_not_unique.append(i)
-
-print(*index_list_not_unique)
+# numbers = tuple(map(int, input().split()))
+# numbers = list(numbers)
+# index_list_not_unique = []
+#
+# for i, num in enumerate(numbers):
+#     if numbers.count(num) > 1:
+#         index_list_not_unique.append(i)
+#
+# print(*index_list_not_unique)
 
 
 
