@@ -39,15 +39,15 @@
 
 """1.3. __dict__"""
 
-# class Person():
-#     def __init__(self, name, age, nationality):
-#         self.name = name
-#         self.age = age
-#         self.nationality = nationality
-#
-# Alex = Person('Alex', 19, 'brasilian')
-# print(Alex.__dict__)
-# # Вывод: {'name': 'Alex', 'age': 19, 'nationality': 'brasilian'}
+class Person():
+    def __init__(self, name, age, nationality):
+        self.name = name
+        self.age = age
+        self.nationality = nationality
+
+Alex = Person('Alex', 19, 'brasilian')
+print(Alex.__dict__)
+# Вывод: {'name': 'Alex', 'age': 19, 'nationality': 'brasilian'}
 
 
 
@@ -89,15 +89,15 @@
 """
 2.3. Использовать vars() для получения всех атрибутов 
 """
-class Person():
-    def __init__(self, name, age, nationality):
-        self.name = name
-        self.age = age
-        self.nationality = nationality
-
-Alex = Person('Alex', 19, 'brasilian')
-print(vars(Alex))
-# Вывод: {'name': 'Alex', 'age': 19, 'nationality': 'brasilian'}
+# class Person():
+#     def __init__(self, name, age, nationality):
+#         self.name = name
+#         self.age = age
+#         self.nationality = nationality
+#
+# Alex = Person('Alex', 19, 'brasilian')
+# print(vars(Alex))
+# # Вывод: {'name': 'Alex', 'age': 19, 'nationality': 'brasilian'}
 
 
 
