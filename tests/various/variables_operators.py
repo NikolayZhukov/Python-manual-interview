@@ -1,3 +1,19 @@
+""""""
+"""Моржовый оператор"""
+
+# lst2D = [
+#     row1 := [1, 2, 3],
+#     row2 := [4, 5, 6],
+#     row3 := [7, 8, 9],
+# ]
+#
+# row2[1] = 100
+# # lst2D[1][1] = 100
+# print(lst2D)
+# print(row1)
+# print(row2)
+# print(row3)
+
 
 
 
@@ -78,3 +94,13 @@
 #     print("Значение x во внешней функции:", x)
 #
 # outer()
+
+# a = float(input())
+# b = float(input())
+#
+# d = a if a > b else b
+# print(int(d))
+
+# age = int(input())
+# status = "совершеннолетний" if age >= 18 else "несовершеннолетний"
+# print(status)
