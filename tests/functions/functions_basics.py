@@ -352,23 +352,43 @@
 """Счётчик-замыкание nonlocal"""
 
 
-def counter():
-    count = 0
+# def counter():
+#     count = 0
+#
+#     def increment():
+#         nonlocal count
+#         count += 1
+#         return count
+#
+#     return increment
+#
+#
+# c = counter()
+# print(c())  # 1 - outer() завершена, но count жив!
+# print(c())  # 2
+# print(c())  # 3
+# print(c())  # 4
+# print(c())  # 5
 
-    def increment():
-        nonlocal count
-        count += 1
-        return count
 
-    return increment
+def create_account(initial_balance):
+    balance = initial_balance  # внешняя переменная
+
+    def deposit(amount):  # внутренняя функция
+        nonlocal balance  # использует внешнюю переменную
+        balance += amount
+        return balance
+
+    return deposit  # возвращаем функцию, а не результат
 
 
-c = counter()
-print(c())  # 1 - outer() завершена, но count жив!
-print(c())  # 2
-print(c())  # 3
-print(c())  # 3
-print(c())  # 3
+# Использование:
+account = create_account(100)  # создаем замыкание
+print(account(50))  # 150 - сохранился доступ к balance
+print(account(30))  # 180 - даже после завершения create_account
+print(account(20))  # 180 - даже после завершения create_account
+
+
 
 # def calculate_list(lst1):
 #     v_min = min(lst1)

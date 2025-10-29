@@ -1,3 +1,194 @@
+"""Декораторы"""
+
+""" 
+Оглавление 
+1. Структура декораторов
+2. Два способа декорирования функции
+3. Максимально универсальный декоратор - сколько угодно аргументов: *args, **kwargs
+4. Декораторы с аргументами
+5. Декоратор метода в классе - с передачей self
+"""
+
+
+""" 1. Структура декораторов: 
+- без передачи аргументов в декораторы, 
+- здесь аргументы передаются только в саму декорируемую функцию"""
+
+
+# def uppercase(func):
+#     def wrapper():
+#         return func().upper()
+#     return wrapper
+#
+# @uppercase
+# def hello():
+#     return "hello"
+#
+# print(hello())
+
+
+# def decorator_func(func):
+#     def wrapper_func(a, b):
+#         result = func(a, b)
+#         print('До декорируемой функции')
+#         print('Результат = ', result)
+#         print('После декорируемой функции')
+#         return result
+#     return wrapper_func
+#
+# user_input_length = int(input('Введите длину: '))
+# user_input_width = int(input('Введите ширину: '))
+#
+# @decorator_func
+# def calculate_area_rectangle(length, width):
+#     return length * width
+#
+# print(calculate_area_rectangle(user_input_length, user_input_width))
+
+
+""" 2. Два способа декорирования функции"""
+
+"""1 способ - передать саму функцию в декоратор (без скобочек и аргументов)"""
+# def decorator_func(func):
+#     def wrapper_func(a, b):
+#         result = func(a, b)
+#         print('До декорируемой функции')
+#         print('Результат = ', result)
+#         print('После декорируемой функции')
+#         return result
+#     return wrapper_func
+#
+# user_input_length = int(input('Введите длину: '))
+# user_input_width = int(input('Введите ширину: '))
+#
+# def calculate_area_rectangle(length, width):
+#     return length * width
+#
+# calculate_area_rectangle = decorator_func(calculate_area_rectangle)
+# calculate_area_rectangle(user_input_length, user_input_width)
+
+
+"""2 способ - с помощью @decorator_function над декорируемой функцией"""
+
+# def decorator_func(func):
+#     def wrapper_func(a, b):
+#         result = func(a, b)
+#         print('До декорируемой функции')
+#         print('Результат = ', result)
+#         print('После декорируемой функции')
+#         return result
+#     return wrapper_func
+#
+# user_input_length = int(input('Введите длину: '))
+# user_input_width = int(input('Введите ширину: '))
+#
+# @decorator_func
+# def calculate_area_rectangle(length, width):
+#     return length * width
+#
+# calculate_area_rectangle(user_input_length, user_input_width)
+
+
+
+""" 3. Максимально универсальный декоратор - сколько угодно аргументов или без аргументов"""
+# def decorator_func(func):
+#     def wrapper_func(*args, **kwargs):
+#         result = func(*args, **kwargs)
+#         print('До декорируемой функции')
+#         print('Результат = ', result)
+#         print('После декорируемой функции')
+#         return result
+#     return wrapper_func
+#
+# @decorator_func
+# def calculate_area_rectangle(length, width):
+#     return length * width
+#
+# user_input_length = int(input('Введите длину: '))
+# user_input_width = int(input('Введите ширину: '))
+#
+# calculate_area_rectangle(user_input_length, user_input_width)
+
+
+""" 4. Декораторы с аргументами"""
+# def decorator_func_with_args(show_before, show_after):
+#     def decorator_func(func):
+#         def wrapper_func(a, b):
+#             if show_before:
+#                 print('До декорируемой функции')
+#             result = func(a, b)
+#             print('Результат =', result)
+#             if show_after:
+#                 print('После декорируемой функции')
+#             return result
+#         return wrapper_func
+#     return decorator_func
+#
+# @decorator_func_with_args(show_before=True, show_after=True)  # передаем аргументы в декоратор
+# def calculate_area_rectangle(length, width):
+#     return length * width
+#
+# user_input_length = int(input('Введите длину: '))
+# user_input_width = int(input('Введите ширину: '))
+#
+# calculate_area_rectangle(user_input_length, user_input_width)
+
+
+
+""" 5. Декоратор метода в классе - с передачей self"""
+
+# def decorator_func(func):
+#     def wrapper_func(self, a, b):
+#         print(f'--- Прямоугольник {self.color} ---')
+#         print('До декорируемой функции')
+#         result = func(self, a, b)
+#         print('Результат = ', result)
+#         print('После декорируемой функции')
+#         return result
+#     return wrapper_func
+#
+#
+# class Rectangle:
+#     def __init__(self, color):
+#         self.length = None
+#         self.width = None
+#         self.color = color
+#
+#     def input_dimensions(self):
+#         print(f"\nВведите размеры для {self.color} прямоугольника:")
+#         self.length = int(input("Длина: "))
+#         self.width = int(input("Ширина: "))
+#
+#     @decorator_func
+#     def calculate_area_rectangle(self, length, width):
+#         return length * width
+#
+#     def calculate_area(self):
+#         return self.calculate_area_rectangle(self.length, self.width)
+#
+#
+# # Запрос у пользователя количества прямоугольников
+# num_rectangles = int(input("Сколько прямоугольников хотите создать? "))
+#
+# rectangles = []
+#
+# for i in range(num_rectangles):
+#     color = input(f"\nВведите цвет {i+1}-го прямоугольника: ")
+#     rect = Rectangle(color)
+#     rect.input_dimensions()
+#     rectangles.append(rect)
+#
+# # Вызовы
+# for rect in rectangles:
+#     # rect.calculate_area()
+#     rect.calculate_area_rectangle(rect.length, rect.width)
+
+
+
+
+
+
+
 # def add_start(tag='h1'):
 #     def decorator_func(func):
 #         def wrapper(s):
@@ -200,161 +391,7 @@
 
 
 
-"""Декораторы"""
 
-""" 
-Оглавление 
-1. Структура декораторов
-2. Два способа декорирования функции
-3. Максимально универсальный декоратор - сколько угодно аргументов: *args, **kwargs
-4. Декораторы с аргументами
-5. Декоратор метода в классе - с передачей self
-"""
-
-
-""" 1. Структура декораторов: 
-- без передачи аргументов в декораторы, 
-- здесь аргументы передаются только в саму декорируемую функцию"""
-
-
-# def uppercase(func):
-#     def wrapper():
-#         return func().upper()
-#     return wrapper
-#
-# @uppercase
-# def hello():
-#     return "hello"
-#
-# print(hello())
-
-
-# def decorator_func(func):
-#     def wrapper_func(a, b):
-#         result = func(a, b)
-#         print('До декорируемой функции')
-#         print('Результат = ', result)
-#         print('После декорируемой функции')
-#         return result
-#     return wrapper_func
-#
-# user_input_length = int(input('Введите длину: '))
-# user_input_width = int(input('Введите ширину: '))
-#
-# def calculate_area_rectangle(length, width):
-#     return length * width
-
-
-""" 2. Два способа декорирования функции"""
-
-"""1 способ - передать саму функцию (без скобочек и аргументов) в декоратор"""
-# calculate_area_rectangle = decorator_func(calculate_area_rectangle)
-# calculate_area_rectangle(user_input_length, user_input_width)
-
-
-"""2 способ - с помощью @decorator_function над декорируемой функцией"""
-# @decorator_func
-# def calculate_area_rectangle(length, width):
-#     return length * width
-#
-# calculate_area_rectangle(user_input_length, user_input_width)
-
-
-
-""" 3. Максимально универсальный декоратор - сколько угодно аргументов или без аргументов"""
-# def decorator_func(func):
-#     def wrapper_func(*args, **kwargs):
-#         result = func(*args, **kwargs)
-#         print('До декорируемой функции')
-#         print('Результат = ', result)
-#         print('После декорируемой функции')
-#         return result
-#     return wrapper_func
-#
-# @decorator_func
-# def calculate_area_rectangle(length, width):
-#     return length * width
-#
-# user_input_length = int(input('Введите длину: '))
-# user_input_width = int(input('Введите ширину: '))
-#
-# calculate_area_rectangle(user_input_length, user_input_width)
-
-
-""" 4. Декораторы с аргументами"""
-# def decorator_func_with_args(show_before, show_after):
-#     def decorator_func(func):
-#         def wrapper_func(a, b):
-#             if show_before:
-#                 print('До декорируемой функции')
-#             result = func(a, b)
-#             print('Результат =', result)
-#             if show_after:
-#                 print('После декорируемой функции')
-#             return result
-#         return wrapper_func
-#     return decorator_func
-#
-#
-# @decorator_func_with_args(show_before=False, show_after=False)  # передаем аргументы в декоратор
-# def calculate_area_rectangle(length, width):
-#     return length * width
-#
-#
-# user_input_length = int(input('Введите длину: '))
-# user_input_width = int(input('Введите ширину: '))
-#
-# calculate_area_rectangle(user_input_length, user_input_width)
-
-
-
-""" 5. Декоратор метода в классе - с передачей self"""
-
-def decorator_func(func):
-    def wrapper_func(self, a, b):
-        print(f'--- Прямоугольник {self.color} ---')
-        print('До декорируемой функции')
-        result = func(self, a, b)
-        print('Результат = ', result)
-        print('После декорируемой функции')
-        return result
-    return wrapper_func
-
-
-class Rectangle:
-    def __init__(self, color):
-        self.length = None
-        self.width = None
-        self.color = color
-
-    def input_dimensions(self):
-        print(f"\nВведите размеры для {self.color} прямоугольника:")
-        self.length = int(input("Длина: "))
-        self.width = int(input("Ширина: "))
-
-    @decorator_func
-    def calculate_area_rectangle(self, length, width):
-        return length * width
-
-    # def calculate_area(self):
-    #     return self.calculate_area_rectangle(self.length, self.width)
-
-
-# Запрос у пользователя количества прямоугольников
-num_rectangles = int(input("Сколько прямоугольников хотите создать? "))
-
-rectangles = []
-
-for i in range(num_rectangles):
-    color = input(f"\nВведите цвет {i+1}-го прямоугольника: ")
-    rect = Rectangle(color)
-    rect.input_dimensions()
-    rectangles.append(rect)
-
-# Вызовы
-for rect in rectangles:
-    # rect.calculate_area()
-    rect.calculate_area_rectangle(rect.length, rect.width)
 
 
 
