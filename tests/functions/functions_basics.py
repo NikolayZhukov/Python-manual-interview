@@ -135,9 +135,22 @@
 # WIDTH = int(input())
 # def func1():
 #     global WIDTH
-#     WIDTH = 13
+#     # WIDTH = 13
 #     return WIDTH
 # print(func1())
+
+
+# call_count = 0
+#
+# def counter():
+#     global call_count
+#     call_count += 1
+#     return call_count
+#
+# print(counter())  # 1
+# print(counter())  # 2
+# print(counter())  # 3
+# print(f"Функция вызвана {call_count} раз")
 
 
 # s = input()
@@ -312,7 +325,50 @@
 # user_input = input()
 # check_email(user_input)
 
+# def outer():
+#     x = 10  # переменная внешней функции
+#
+#     def inner():  # это ЗАМЫКАНИЕ - оно "запоминает" x
+#         return x + 5  # использует переменную из внешней области
+#     return inner
+#
+# closure = outer()
+# print(closure())
 
+""""""
+"""Замыкание"""
+
+# def outer(b):
+#     x = 10  # переменная внешней функции
+#
+#     def inner():  # это ЗАМЫКАНИЕ - оно "запоминает" x
+#         return x + b  # использует переменную из внешней области
+#     return inner
+#
+# closure = outer(7)
+# print(closure())
+
+
+"""Счётчик-замыкание nonlocal"""
+
+
+def counter():
+    count = 0
+
+    def increment():
+        nonlocal count
+        count += 1
+        return count
+
+    return increment
+
+
+c = counter()
+print(c())  # 1 - outer() завершена, но count жив!
+print(c())  # 2
+print(c())  # 3
+print(c())  # 3
+print(c())  # 3
 
 # def calculate_list(lst1):
 #     v_min = min(lst1)
@@ -340,4 +396,8 @@
 #     print(f"Уважаемый, {name} {surname}! Вы верно выполнили это задание!")
 #
 # print_frase()
+
+
+# d = {'Москва':6, 'Питер':5, 'Воронеж':7}
+# print(max(d, key=d.get))
 
