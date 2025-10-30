@@ -16,6 +16,14 @@ def sample_data():
     print("\n3) Выполняется фикстура после теста")
 
 
+# @pytest.fixture
+# def sample_data():
+#     print("\n1) Выполняется фикстура перед тестом")
+#     data = [1, 2, 3]
+#     print("\n3) Выполняется фикстура после теста")
+#     return data
+
+
 def test_sum(sample_data):
     print("\n2) Выполняется сама функция Сумма")
     assert sum(sample_data) == 6

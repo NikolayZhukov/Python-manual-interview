@@ -1,20 +1,55 @@
-class User:
-    # protected - доступен только в классе или же те дочерним классам
-    _emp_name = None
-    _age = None
+# class Calculator:
+#     @staticmethod
+#     def add(a, b):
+#         return a + b
+#
+#     @staticmethod
+#     def multiply(a, b):
+#         return a * b
+#
+# # Использование без создания экземпляра
+# result1 = Calculator.add(5, 5)  # 8
+# result2 = Calculator.multiply(4, 2)  # 8
+#
+# print(result1, result2)
 
-    # private - доступен только в самом классе
-    __branch = None
 
-    # конструктор
-    def __init__(self, emp_name, age, branch):
-        self._emp_name = emp_name
-        self._age = age
-        self.__branch = branch
+class Animal:
+    pass
 
-    # публичный метод - общедоступный метод
-    def display(self):
-        print(self._emp_name + " " + self._age + " " + self.__branch)
+class Dog(Animal):
+    pass
+
+class Cat(Animal):
+    pass
+
+# Создаем объекты
+my_dog = Dog()
+my_cat = Cat()
+
+print(isinstance(my_dog, Dog))
+
+
+
+
+
+# class User:
+#     # protected - доступен только в классе или же те дочерним классам
+#     _emp_name = None
+#     _age = None
+#
+#     # private - доступен только в самом классе
+#     __branch = None
+#
+#     # конструктор
+#     def __init__(self, emp_name, age, branch):
+#         self._emp_name = emp_name
+#         self._age = age
+#         self.__branch = branch
+#
+#     # публичный метод - общедоступный метод
+#     def display(self):
+#         print(self._emp_name + " " + self._age + " " + self.__branch)
 
 
 

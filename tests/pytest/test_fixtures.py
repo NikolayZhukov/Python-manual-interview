@@ -4,24 +4,24 @@ import tempfile
 
 
 
-def divide(a, b):
-    if b == 0:
-        raise ValueError("Делитель не может быть равен нулю")
-    return a / b
-
-
-def test_divide_by_zero():
-    with pytest.raises(ValueError) as exc_info:
-        divide(10, 0)
-    print(str(exc_info.value))
-
-    # Проверка текста сообщения об ошибке
-    assert str(exc_info.value) == "Делитель не может быть равен нулю"
-
-
-def test_divide_success():
-    result = divide(10, 2)
-    assert result == 5
+# def divide(a, b):
+#     if b == 0:
+#         raise ValueError("Делитель не может быть равен нулю")
+#     return a / b
+#
+#
+# def test_divide_by_zero():
+#     with pytest.raises(ValueError) as exc_info:
+#         divide(10, 0)
+#     print(str(exc_info.value))
+#
+#     # Проверка текста сообщения об ошибке
+#     assert str(exc_info.value) == "Делитель не может быть равен нулю"
+#
+#
+# def test_divide_success():
+#     result = divide(10, 2)
+#     assert result == 5
 
 
 
@@ -35,7 +35,7 @@ def test_divide_success():
 # def multiply(a, b):
 #     return a * b
 #
-# # Тестируем разные функции с разными параметрами
+# # Тестируем разные функции с разнымя и параметрами
 # @pytest.mark.parametrize("func,a,b,expected", [
 #     (add, 2, 3, 5),
 #     (add, -1, 1, 0),
@@ -47,7 +47,7 @@ def test_divide_success():
 # def test_math_operations(func, a, b, expected):
 #     result = func(a, b)
 #     assert result == expected
-#
+
 #
 # Базовая функция для тестирования
 # def calculate(a, b, operation):
