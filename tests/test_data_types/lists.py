@@ -44,9 +44,27 @@ numbers = [1, True, 6, None, [1, 3, 6], 'Стол', 3, 'Карандаш', 9]
 Преобразуйте список в прописные буквы
 words = ["hello", "world", "python"]
 """
-words = ["hello", "world", "python"]
-upper_words = [word.upper() for word in words]
-print(upper_words)
+"""Вместо исходного списка"""
+# words = ["hello", "world", "python"]
+# upper_words = [word.upper() for word in words]
+# print(upper_words)
+
+"""В новый список"""
+# words = ["hello", "world", "python"]
+# upper_words = []
+# for word in words:
+#     upper_words.append(word.upper())
+# print(words)
+
+
+"""
+Верните список из квадратов чётных чисел в диапазоне от 0 до 9
+"""
+even_squares = [x * x for x in range(10) if x % 2 == 0]
+print(even_squares)
+
+
+
 
 
 
@@ -170,8 +188,7 @@ print(upper_words)
 # even_squares = [x * x for x in range(10) if x % 2 == 0]
 # print(even_squares)
 
-# even_squares = [x * x for x in range(100) if x % 2 == 0]
-# print(even_squares)
+
 
 # squares = (x * x for x in range(10))
 # print(squares)         # <generator object ...>
