@@ -32,31 +32,47 @@
 Здесь цикл while работает до тех пор, пока условие guess != secret_number является истиной. 
 Внутри цикла мы меняем переменную attempts, чтобы вести счет.
 """
-import random
 
-secret_number = int(input('Введите секретное число от 1 до 10: '))
-attempts = 0
-guess = None
+# secret_number = int(input('Введите секретное число от 1 до 10: '))
+# attempts = 0
+# guess = None
+#
+# print("Я загадал число от 1 до 10. Попробуй угадать!")
+#
+# while guess != secret_number:
+#     try:
+#         guess = int(input("Твоя догадка: "))
+#         attempts += 1
+#
+#         if guess < secret_number:
+#             print("Мое число больше.")
+#         elif guess > secret_number:  # заменил if на elif
+#             print("Мое число меньше.")
+#         else:
+#             print(f"Поздравляю! Ты угадал с {attempts}-й попытки!")
+#             break  # добавляем break для остановки игры
+#
+#     except ValueError:
+#         print("Пожалуйста, вводи только целые числа!")
 
-print("Я загадал число от 1 до 10. Попробуй угадать!")
-
-while guess != secret_number:
-    try:
-        guess = int(input("Твоя догадка: "))
-        attempts += 1
-
-        if guess < secret_number:
-            print("Мое число больше.")
-        elif guess > secret_number:  # заменил if на elif
-            print("Мое число меньше.")
-        else:
-            print(f"Поздравляю! Ты угадал с {attempts}-й попытки!")
-            break  # добавляем break для остановки игры
-
-    except ValueError:
-        print("Пожалуйста, вводи только целые числа!")
 
 
+
+"""
+ Программа запрашивает у пользователя слова до тех пор, пока он не введет слово "стоп", регистронезависимо. 
+ После этого выводится количество введенных слов и сами слова.
+"""
+# count = 0
+# word = ""
+# lst_words = []
+#
+# while word.lower() != "стоп":
+#     word = input("Введите слово: ")
+#     lst_words.append(word)
+#     count += 1
+#
+# print(f"Количество слов: {count}")
+# print(f"Список введённых слов: {lst_words}")
 
 
 

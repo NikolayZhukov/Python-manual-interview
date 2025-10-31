@@ -1,23 +1,59 @@
-# numbers = tuple(map(int, input().split()))
-# numbers = list(numbers)
-# index_list_not_unique = []
-#
+""" """
+
+"""
+Напиши программу, которая будет складывать соответствующие пары из двух списков и сохранять в третий список
+"""
+# lst1 = [4,9,8,5]
+# lst2 = [6,9,1,1]
+# list_sum = [lst1[i] + lst2[i] for i in range(len(lst1))]
+# print(*list_sum)
+
+
+
+"""
+Дан список целых чисел. Напишите программу, которая выводит все элементы, 
+находящиеся на четных позициях (с четными индексами) в исходном списке.
+"""
+
+# numbers = [4, 5, 7, 12, 56]
+# result = [numbers[i] for i in range(len(numbers)) if i % 2 == 0]
+# print(*result)
+
+"""
+С помощью enumerate
+"""
+# numbers = [4, 5, 7, 12, 56]
+# result = []
 # for i, num in enumerate(numbers):
-#     if numbers.count(num) > 1:
-#         index_list_not_unique.append(i)
+#     if i % 2 == 0:
+#         result.append(num)
+# print(*result)
+
+
+"""
+Выведите список с городами, в которых меньше 9 букв.
+"""
+# cities = ["Mosca", "Londra", "Napoli", "Sanpietroburgo", "Amsterdam", "Manchester"]
 #
-# print(*index_list_not_unique)
+# cities_selected = [x for x in cities if len(x) < 9]
+# print(cities_selected)
+
+
+"""
+Выведите список квадратов чисел, от ноля до числа n, получаемое через ввод пользователем.
+"""
+n = int(input())
+sum = [x ** 2 for x in range(n)]
+print(sum)
 
 
 
 
-# numbers = tuple(map(int, input().split()))
-# numbers_unique = []
-# for num in numbers:
-#     if num not in numbers_unique:
-#         numbers_unique.append(num)
-# numbers = tuple(numbers_unique)
-# print(*numbers_unique)
+
+
+
+
+
 
 
 # lst1 = input().split()
@@ -25,16 +61,6 @@
 # print(lst2)
 
 
-
-# lst1 = list(map(int, input().split()))
-# lst2 = list(map(int, input().split()))
-# list_sum = [lst1[i] + lst2[i] for i in range(len(lst1))]
-# print(*list_sum)
-
-
-# numbers = list(map(float, input().split()))
-# result = [numbers[i] for i in range(len(numbers)) if i % 2 == 0]
-# print(*result)
 
 # lst = list(map(float, input().split()))
 # list_2 = [lst[i] for i in range(len(lst))
@@ -51,10 +77,6 @@
 # print(lst_abs)
 
 
-# cities = ["Mosca", "Londra", "Napoli", "Sanpietroburgo", "Amsterdam", "Manchester"]
-#
-# cities_selected = [x for x in cities if len(x) < 9]
-# print(cities_selected)
 
 # a = [x for x in range(-10, 10) if x % 2 == 0 and x < 0]
 # print(a)
@@ -72,6 +94,4 @@
 # print(b)
 
 
-# n = int(input())
-# sum = [x ** 2 for x in range(n)]
-# print(sum)
+
