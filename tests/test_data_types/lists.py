@@ -1,24 +1,67 @@
-a = [1, 2, [55, 7, 88, [99, 111, 1077], 91], 44, 84]
-result = a[2][0]  # 55
-print(result)
+""""""
+"""
+Дан вложенный список: a = [1, 2, [55, 7, 88, [99, 111, 1077], 91], 44, 84]
+Нужно получить и вывести число 111, используя индексацию.
+"""
+# a = [1, 2, [55, 7, 88, [99, 111, 1077], 91], 44, 84]
+# result = a[2][0]
+# print(result)
 
-# a = list('Hello')
-# print(a[:])
 
-# """
-# 1.5. Подсчитайте количество элементов в списке и выведите получившееся число.
-# numbers = [1, True, 6, None, [1, 3, 6], 'Стол', 3, 'Карандаш', 9]
-# """
+"""
+Подсчитайте количество элементов в списке и выведите получившееся число.
+numbers = [1, True, 6, None, [1, 3, 6], 'Стол', 3, 'Карандаш', 9]
+"""
 # lst = [1, True, 6, None, [1, 3, 6], 'Стол', 3, 'Карандаш', 9]
 # lst_count = len(lst)
 # print(lst_count)
 
+
+"""
+Выведите минимальное, максимально число и сумму всех введённых чисел
+"""
+# users = list(map(int, input().split()))
+# print(f'{max(users)} {min(users)} {sum(users)}')
+
+
+"""
+Выведите введённые пользователем числа в порядке убывания
+"""
+# users = list(map(int, input().split()))
+# users = sorted(users, reverse=True)
+# print(*users)
+
+
+"""
+Выведите введённые пользователем числа в порядке возрастания
+"""
+# users = list(map(int, input().split()))
+# users = sorted(users)
+# print(*users)
+
+
+""" 
+Преобразуйте список в прописные буквы
+words = ["hello", "world", "python"]
+"""
+words = ["hello", "world", "python"]
+upper_words = [word.upper() for word in words]
+print(upper_words)
+
+
+
+
+
+
 # s = input()
 # lst = s.split()
 # cities = ["Москва", "Тверь", "Вологда"]
-# # lst.extend(cities)
-# lst = lst + cities
+# lst.extend(cities)
+# # lst = lst + cities
 # print(*lst)
+
+
+
 #
 # s = input()
 # lst = s.split()
@@ -27,12 +70,9 @@ print(result)
 # print(*lst)
 
 
-# users = list(map(int, input().split()))
-# users = sorted(users, reverse=True)
-# print(*users)
+#
 
-# users = list(map(int, input().split()))
-# print(f'{max(users)} {min(users)} {sum(users)}')
+
 
 
 # name = input()
@@ -105,9 +145,7 @@ print(result)
 # squares = list(map(lambda x: x**2, [1, 2, 3]))
 # print(squares)
 
-# words = ["hello", "world", "python"]
-# upper_words = map(str.upper, words)
-# print(list(upper_words))  # ['HELLO', 'WORLD', 'PYTHON']
+
 
 # lst = [5.4, 6.7, 10.4]
 # digs = list(map(int, input().split()))
