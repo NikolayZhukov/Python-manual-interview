@@ -60,9 +60,15 @@ words = ["hello", "world", "python"]
 """
 Верните список из квадратов чётных чисел в диапазоне от 0 до 9
 """
-even_squares = [x * x for x in range(10) if x % 2 == 0]
-print(even_squares)
+# even_squares = [x * x for x in range(10) if x % 2 == 0]
+# print(even_squares)
 
+
+"""
+Определите, присутствует ли число 58 в данном списке. Если да, верните "True", в противном случае "False"
+"""
+# numbers_list = [1,2,3,7,99,2,3,77,907,99,2,3,1,2,1,3,5,4,6,5]
+# print(58 in numbers_list)
 
 
 
@@ -224,7 +230,6 @@ print(even_squares)
 # for i in list:
 #     print(i)
 
-# numbers_list = [1,2,3,7,99,2,3,77,907,99,2,3,1,2,1,3,5,4,6,5]
-# print(58 in numbers_list)
+
 
 
