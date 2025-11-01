@@ -117,12 +117,12 @@ sorted - САМЫЙ ПИТОНОВСКИЙ СПОСОБ, т.к.:
 """
 Обычная функция + последняя буква отдельно
 """
-words = ["apple", "ant", "banana", "avocado", "axe", "air", "alpha"]
+# words = ["apple", "ant", "banana", "avocado", "axe", "air", "alpha"]
+#
+# def last_letter(word):
+#     return word[-1]
+#
+# data = [x for x in words if x[0] == 'a' and len(x) > 3]
+# decorated = [(last_letter(x), x) for x in data]
+# print(decorated)
 
-def last_letter(word):
-    return word[-1]
-
-data = [x for x in words if x[0] == 'a' and len(x) > 3]
-decorated = [(last_letter(x), x) for x in data]
-print(decorated)
-# print(data)

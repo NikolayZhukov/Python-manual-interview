@@ -14,20 +14,20 @@
 # print(result1, result2)
 
 
-class Animal:
-    pass
-
-class Dog(Animal):
-    pass
-
-class Cat(Animal):
-    pass
-
-# Создаем объекты
-my_dog = Dog()
-my_cat = Cat()
-
-print(isinstance(my_dog, Dog))
+# class Animal:
+#     pass
+#
+# class Dog(Animal):
+#     pass
+#
+# class Cat(Animal):
+#     pass
+#
+# # Создаем объекты
+# my_dog = Dog()
+# my_cat = Cat()
+#
+# print(isinstance(my_dog, Dog))
 
 
 
