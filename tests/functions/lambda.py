@@ -1,7 +1,32 @@
 """"""
 """
 Отсортировать список строк по последнему символу
+# words = ['apple', 'banana', 'cherry', 'date']
 """
+words = ['apple', 'banana', 'cherry', 'date']
+sorted_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # words = ['apple', 'banana', 'cherry', 'date']
 # sorted_words = sorted(words, key=lambda x: x[-1])
 # print(sorted_words)
