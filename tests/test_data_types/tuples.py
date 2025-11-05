@@ -1,4 +1,54 @@
+""""""
+"""
+Распаковка кортежей в цикле
+"""
+# students = [
+#     ("Алексей", 20, "информатика"),
+#     ("Мария", 19, "физика"),
+#     ("Иван", 21, "математика")
+# ]
+#
+# for name, age, specialty in students:
+#     print(f"Имя: {name}, Возраст: {age}, Специальность: {specialty}")
 
+
+
+
+"""
+1) Используя распаковку в цикле, вычислите средний балл каждого студента
+"""
+# students_grades = [
+#     ("Алексей", "математика", 85, 92, 78),
+#     ("Мария", "физика", 90, 88, 95),
+#     ("Иван", "информатика", 76, 85, 80),
+#     ("Елена", "математика", 92, 96, 89),
+#     ("Дмитрий", "физика", 82, 79, 85)
+# ]
+# print("Средние баллы студентов:")
+# for name, subject, *grades in students_grades:
+#     avg_grade = sum(grades) / len(grades)
+#     print(f"{name} ({subject}): {avg_grade:.1f}")
+
+"""
+2) Отсортируйте студентов по среднему баллу (по убыванию)
+"""
+students_grades = [
+    ("Алексей", "математика", 85, 92, 78),
+    ("Мария", "физика", 90, 88, 95),
+    ("Иван", "информатика", 76, 85, 80),
+    ("Елена", "математика", 92, 96, 89),
+    ("Дмитрий", "физика", 82, 79, 85)
+]
+print("\nРейтинг студентов по среднему баллу:")
+student_ratings = []
+for name, subject, *grades in students_grades:
+    avg_grade = sum(grades) / len(grades)
+    student_ratings.append((name, subject, avg_grade))
+
+sorted_students = sorted(student_ratings, key=lambda x: x[2], reverse=True)
+
+for name, subject, avg in sorted_students:
+    print(f"{name}: {avg:.1f} баллов ({subject})")
 
 
 # names = tuple(input().split())
