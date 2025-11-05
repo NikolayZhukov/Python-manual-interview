@@ -36,4 +36,4 @@ def divide(a, b):
 # Тест с использованием pytest.raises
 def test_divide_by_zero():
     with pytest.raises(ValueError):
-        divide(10, 3)
+        divide(10, 0)

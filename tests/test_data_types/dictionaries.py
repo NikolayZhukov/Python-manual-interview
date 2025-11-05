@@ -1,7 +1,7 @@
-data = ([1,2,3],['a','b','c'])
-f, g = data
-dict = {f[i]: g[i] for i in range(len(data))}
-print(dict)
+# data = ([1,2,3],['a','b','c'])
+# f, g = data
+# dict = {f[i]: g[i] for i in range(len(data))}
+# print(dict)
 
 
 # things = {'карандаш': 20, 'зеркальце': 100, 'зонт': 500, 'рубашка': 300,
