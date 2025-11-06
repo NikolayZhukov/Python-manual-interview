@@ -47,8 +47,10 @@ class Game:
         }
         if rules[move1] == move2:
             self.count_player1 += 1
+            print(f'{self.player1.name} набрал {self.count_player1} очко/очка')
         else:
             self.count_player2 += 1
+            print(f'{self.player2.name} набрал {self.count_player2} очко/очка')
 
     def play_round(self):
         move1 = self.player1.make_move()
@@ -76,7 +78,7 @@ class Game:
 
 # --- Использование ---
 if __name__ == "__main__":
-    human = HumanPlayer("Игрок")
+    human = HumanPlayer("Человек")
     computer = ComputerPlayer("Компьютер")
     game = Game(human, computer)
     game.start()
