@@ -40,34 +40,34 @@
 #Ожидаемый вывод
 антибиотик обезболивающее йод жгут бинт антисептик шприц
 """
-max_weight = 1500
-
-medicines = {
-    'бинт': {'weight': 100, 'priority': 3},
-    'антибиотик': {'weight': 200, 'priority': 5},
-    'обезболивающее': {'weight': 150, 'priority': 5},
-    'йод': {'weight': 50, 'priority': 4},
-    'пластырь': {'weight': 80, 'priority': 2},
-    'жгут': {'weight': 300, 'priority': 4},
-    'антисептик': {'weight': 180, 'priority': 3},
-    'вата': {'weight': 120, 'priority': 1},
-    'шприц': {'weight': 60, 'priority': 3},
-    'термометр': {'weight': 250, 'priority': 2}
-}
-
-# Сортируем медикаменты: сначала по приоритету (убывание), потом по весу (возрастание)
-sorted_meds = sorted(medicines.items(),
-                    key=lambda x: (x[1]['priority'], x[1]['weight']), reverse=True)
-print(sorted_meds)
-result = []
-current_weight = 0
-
-for name, props in sorted_meds:
-    if current_weight + props['weight'] <= max_weight:
-        result.append(name)
-        current_weight += props['weight']
-
-print(' '.join(result))
+# max_weight = 1500
+#
+# medicines = {
+#     'бинт': {'weight': 100, 'priority': 3},
+#     'антибиотик': {'weight': 200, 'priority': 5},
+#     'обезболивающее': {'weight': 150, 'priority': 5},
+#     'йод': {'weight': 50, 'priority': 4},
+#     'пластырь': {'weight': 80, 'priority': 2},
+#     'жгут': {'weight': 300, 'priority': 4},
+#     'антисептик': {'weight': 180, 'priority': 3},
+#     'вата': {'weight': 120, 'priority': 1},
+#     'шприц': {'weight': 60, 'priority': 3},
+#     'термометр': {'weight': 250, 'priority': 2}
+# }
+#
+# # Сортируем медикаменты: сначала по приоритету (убывание), потом по весу (возрастание)
+# sorted_meds = sorted(medicines.items(),
+#                     key=lambda x: (x[1]['priority'], x[1]['weight']), reverse=True)
+# print(sorted_meds)
+# result = []
+# current_weight = 0
+#
+# for name, props in sorted_meds:
+#     if current_weight + props['weight'] <= max_weight:
+#         result.append(name)
+#         current_weight += props['weight']
+#
+# print(' '.join(result))
 
 
 
@@ -150,7 +150,7 @@ print(' '.join(result))
 # cars = {'1': 'black', '2': 'white', '3': 'red'}
 # for k in cars.items():
 #     print(k)
-#
+
 # cars = {'1': 'black', '2': 'white', '3': 'red'}
 # for k in cars.keys():
 #     print(k)
@@ -158,6 +158,7 @@ print(' '.join(result))
 # cars = {'1': 'black', '2': 'white', '3': 'red'}
 # for k in cars.values():
 #     print(k)
+
 from venv import create
 
 # cars = {'1': 'black', '2': 'white', '3': 'red'}
@@ -171,3 +172,23 @@ from venv import create
 # del(cars['2'])
 # print(cars)
 
+# animals = {'elefant': 2000, 'mouse': 0.5, 'cat': 3.5, 'dog': 14}
+# sorted_animals = sorted(animals.items(), key=lambda x: x[1], reverse=True)
+# for i in sorted_animals:
+#     print(f'{i[0]} = {i[1]} кг')
+
+# animals = {'elefant': 2000, 'mouse': 0.5, 'cat': 3.5, 'dog': 14}
+# sorted_alpha = filter(lambda x: len(x[0]) > 3, animals.items())
+# for i in sorted_alpha:
+#     print(*i)
+
+# animals = {'elefant': 2000, 'mouse': 0.5, 'cat': 3.5, 'dog': 14}
+# print(sorted(animals.items()))
+# sorted_animals = sorted(animals.items(), key=lambda x: x[1])
+# for a, b in sorted(animals):
+#     print(a, b) if len(a) > 3 else
+
+# animals = {'elefant': 2000, 'mouse': 0.5, 'cat': 3.5, 'dog': 14}
+# sorted_animals = filter(lambda x: x[1] % 2 == 0, animals.items())
+# for x, y in sorted_animals:
+#     print(x, y)
