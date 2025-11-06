@@ -25,7 +25,9 @@
 # print(cat.speak())  # Whiskers says Meow!
 
 
-
+"""
+Автомобили б/у
+"""
 class Car:
     def __init__(self, model, year, fuel, comment):
         self.model = model #Передаётся при вызове, при инициализации экземпляра класса
@@ -66,7 +68,7 @@ petrol_car = PetrolCar('Lada 777', 2005, 'Не заводится, в после
 
 print(eletric_car.calculate_price(), eletric_car.comment_from_vendor())
 print(petrol_car.calculate_price(), petrol_car.comment_from_vendor())
-print()
+
 
 
 

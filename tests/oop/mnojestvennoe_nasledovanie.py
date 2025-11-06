@@ -40,8 +40,8 @@ class Bat(Animal, Mammal, Bird):
         Mammal.__init__(self)
         Bird.__init__(self, can_fly=True)
 
-    def speak(self):
-        return "Пищит"
+    # def speak(self):
+    #     return "Пищит"
 
     def use_echolocation(self):
         return "Использует эхолокацию"
