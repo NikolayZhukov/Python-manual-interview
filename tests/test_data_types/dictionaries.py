@@ -1,3 +1,4 @@
+""""""
 """
 Добавить предметы в рюкзак в порядке убывания веса, пока не превысим лимит
 """
@@ -9,6 +10,7 @@
 #
 # # Сортируем предметы по весу в порядке убывания
 # sorted_items = sorted(things.items(), key=lambda x: x[1], reverse=True)
+# # print(sorted_items)
 #
 # result = []
 # current_weight = 0
@@ -38,21 +40,6 @@
 #Ожидаемый вывод
 антибиотик обезболивающее йод жгут бинт антисептик шприц
 """
-max_weight = 1500  # Максимальный вес аптечки в граммах
-
-medicines = {
-    'бинт': {'weight': 100, 'priority': 3},
-    'антибиотик': {'weight': 200, 'priority': 5},
-    'обезболивающее': {'weight': 150, 'priority': 5},
-    'йод': {'weight': 50, 'priority': 4},
-    'пластырь': {'weight': 80, 'priority': 2},
-    'жгут': {'weight': 300, 'priority': 4},
-    'антисептик': {'weight': 180, 'priority': 3},
-    'вата': {'weight': 120, 'priority': 1},
-    'шприц': {'weight': 60, 'priority': 3},
-    'термометр': {'weight': 250, 'priority': 2}
-}
-
 max_weight = 1500
 
 medicines = {
@@ -70,8 +57,8 @@ medicines = {
 
 # Сортируем медикаменты: сначала по приоритету (убывание), потом по весу (возрастание)
 sorted_meds = sorted(medicines.items(),
-                    key=lambda x: (-x[1]['priority'], x[1]['weight']))
-
+                    key=lambda x: (x[1]['priority'], x[1]['weight']), reverse=True)
+print(sorted_meds)
 result = []
 current_weight = 0
 
@@ -81,6 +68,7 @@ for name, props in sorted_meds:
         current_weight += props['weight']
 
 print(' '.join(result))
+
 
 
 
@@ -104,6 +92,7 @@ print(' '.join(result))
 #           'расческа': 40, 'котелок': 820, 'палатка': 5240, 'брезент': 2130, 'спички': 10}
 # sorted_items = sorted(things.items(), key=lambda x: x[1], reverse=True)
 # print(sorted_items)
+
 
 
 """"""
