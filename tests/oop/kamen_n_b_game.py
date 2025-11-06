@@ -28,22 +28,27 @@ class ComputerPlayer(Player):
 
 class Game:
     """Класс, управляющий процессом игры."""
+
     def __init__(self, player1, player2):
         self.player1 = player1
         self.player2 = player2
+        self.count_player1 = 0
+        self.count_player2 = 0
+        self.round = 0
 
     def determine_winner(self, move1, move2):
         if move1 == move2:
+            print('Ничья')
             return None  # Ничья
         rules = {
             "камень": "ножницы",
             "ножницы": "бумага",
             "бумага": "камень"
         }
-        # Если move2 — это то, что проигрывает move1, значит player1 выиграл
         if rules[move1] == move2:
-            return self.player1
-        return self.player2
+            self.count_player1 += 1
+        else:
+            self.count_player2 += 1
 
     def play_round(self):
         move1 = self.player1.make_move()
@@ -52,18 +57,21 @@ class Game:
         print(f"\n{self.player1.name} выбрал: {move1}")
         print(f"{self.player2.name} выбрал: {move2}")
 
-        winner = self.determine_winner(move1, move2)
-        if winner:
-            print(f"🎉 Победитель: {winner.name}!\n")
-        else:
-            print("🤝 Ничья!\n")
+        self.determine_winner(move1, move2)
 
-    def start(self, rounds=3):
-        print("=== Игра: Камень, ножницы, бумага ===")
-        for i in range(rounds):
-            print(f"Раунд {i+1}:")
+    def start(self):
+        while self.count_player1 < 2 and self.count_player2 < 2:
+            self.round += 1
+            print(f"=== Раунд {self.round} ===")
             self.play_round()
-        print("=== Игра окончена ===")
+
+        if self.count_player1 == 2:
+            print(f'{self.player1.name} победил, он набрал {self.count_player1} очка!')
+            print("=== Игра окончена ===")
+        if self.count_player2 == 2:
+            print(f'{self.player2.name} победил, он набрал {self.count_player2} очка!')
+            print("=== Игра окончена ===")
+
 
 
 # --- Использование ---
