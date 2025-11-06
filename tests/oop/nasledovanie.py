@@ -29,11 +29,12 @@
 Автомобили б/у
 """
 class Car:
-    def __init__(self, model, year, fuel, comment):
+    def __init__(self, model, year, fuel, comment, color):
         self.model = model #Передаётся при вызове, при инициализации экземпляра класса
         self.year = year
         self.fuel = fuel
         self.comment = comment
+        self.color = color
 
     def calculate_price(self):
         raise NotImplementedError('Отсутствует метод drive')
@@ -42,8 +43,8 @@ class Car:
         raise NotImplementedError
 
 class ElectricCar(Car):
-    def __init__(self, model, year, comment):
-        super().__init__(model, year, 'Электричество', comment)
+    def __init__(self, model, year, comment, color):
+        super().__init__(model, year, 'Электричество', comment,color)
 
     def calculate_price(self):
         price = 50000 - ((2025 - self.year) * 1000)
@@ -53,8 +54,8 @@ class ElectricCar(Car):
         return f'\nКомментарий от продавца: {self.comment}'
 
 class PetrolCar(Car):
-    def __init__(self, model, year, comment):
-        super().__init__(model, year,'Бензин', comment)
+    def __init__(self, model, year, comment, color):
+        super().__init__(model, year,'Бензин', comment, color)
 
     def calculate_price(self):
         price = 30000 - ((2025 - self.year) * 1000)
@@ -63,14 +64,16 @@ class PetrolCar(Car):
     def comment_from_vendor(self):
         return f'\nКомментарий от продавца: {self.comment}'
 
-eletric_car = ElectricCar('Tesla M50', 2022, 'В отличном состоянии, как новая')
-petrol_car = PetrolCar('Lada 777', 2005, 'Не заводится, в последний раз ездил на ней 3 года назад')
+eleсtric_car = ElectricCar('Tesla M50', 2022, 'В отличном состоянии, как новая', color='синий')
+petrol_car = PetrolCar('Lada 777', 2005, 'Не заводится, в последний раз ездил на ней 3 года назад', color='чёрный')
 
-print(eletric_car.calculate_price(), eletric_car.comment_from_vendor())
-print(petrol_car.calculate_price(), petrol_car.comment_from_vendor())
+print(eleсtric_car.calculate_price(), eleсtric_car.comment_from_vendor())
+print(eleсtric_car.color)
+print(petrol_car.calculate_price(), petrol_car.comment_from_vendor(), petrol_car.color)
+print(petrol_car.color)
 
-
-
+# print(eleсtric_car.__dict__)
+# print(petrol_car.__dict__)
 
 
 
