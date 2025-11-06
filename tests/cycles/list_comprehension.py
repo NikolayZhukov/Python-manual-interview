@@ -35,16 +35,16 @@
 """
 # cities = ["Mosca", "Londra", "Napoli", "Sanpietroburgo", "Amsterdam", "Manchester"]
 #
-# cities_selected = [x for x in cities if len(x) < 9]
+# cities_selected = [i for i in cities if len(i) < 9]
 # print(cities_selected)
 
 
 """
 Выведите список квадратов чисел, от ноля до числа n, получаемое через ввод пользователем.
 """
-n = int(input())
-sum = [x ** 2 for x in range(n)]
-print(sum)
+# n = int(input())
+# sum = [x ** 2 for x in range(n)]
+# print(sum)
 
 
 
