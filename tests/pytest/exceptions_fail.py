@@ -78,7 +78,7 @@ from requests.compat import integer_types
 """
 
 """
-1 способ - с breake
+1 способ - с break
 """
 # def validate_input():
 #     while True:
@@ -138,6 +138,9 @@ from requests.compat import integer_types
 Когда введено корректное положительное число —
 вывести "Ваше число: X" и завершить работу.
 """
+"""
+1 способ - try ... except
+"""
 # def get_positive_number():
 #     while True:
 #         try:
@@ -149,8 +152,9 @@ from requests.compat import integer_types
 #         except ValueError:
 #             print(f'Ошибка: введите число больше нуля и не равное нулю')
 #     print(f'Вы ввели число {user_input}')
-#
+
 # get_positive_number()
+
 
 
 """
@@ -172,18 +176,18 @@ from requests.compat import integer_types
 """
 1 способ
 """
-def get_password():
-    while True:
-        password_input = input("Введите пароль от 8 до 20 символов: ")
-        if len(password_input) < 8:
-            print("Ошибка: пароль слишком короткий!")
-        elif len(password_input) > 20:
-            print("Ошибка: пароль слишком длинный!")
-        else:
-            print("Пароль принят!")
-            break
-
-get_password()
+# def get_password():
+#     while True:
+#         password_input = input("Введите пароль от 8 до 20 символов: ")
+#         if len(password_input) < 8:
+#             print("Ошибка: пароль слишком короткий!")
+#         elif len(password_input) > 20:
+#             print("Ошибка: пароль слишком длинный!")
+#         else:
+#             print("Пароль принят!")
+#             break
+#
+# get_password()
 
 """
 2 способ - двойная проверка, излишне, но работает
@@ -201,5 +205,74 @@ get_password()
 #     print("Пароль принят!")
 #
 # get_password()
+
+
+"""
+Напиши функцию get_positive_list(), которая:
+Просит пользователя ввести 5 чисел через пробел (например: 1 -3 4 0 7).
+Разбивает введённую строку на отдельные элементы и превращает их в числа
+Проверяет, что все числа больше нуля.
+Если встречается отрицательное число или ноль — вывести сообщение
+"Ошибка: все числа должны быть положительными!"
+и попросить ввести заново.
+Если все числа положительные — вывести:
+"Список принят!"
+и завершить программу (break).
+"""
+
+# def get_positive_list():
+#     while True:
+#         user_input = list(map(int, input("Введите 5 чисел больше нуля через пробел: ").split()))
+#
+#         if len(user_input) != 5:
+#             print("Ошибка: нужно ввести ровно 5 чисел!")
+#             continue
+#
+#         list_verify = []
+#         for i in user_input:
+#             if i > 0:
+#                 list_verify.append(i)
+#             else:
+#                 print("Ошибка: все числа должны быть больше нуля!")
+#                 list_verify = []  # сбросим, чтобы не сохранять частично верные
+#                 break
+#
+#         if len(list_verify) == 5:  # все числа положительные
+#             print("Ваш список принят!")
+#             break
+#
+# get_positive_list()
+
+
+"""
+Напиши функцию check_words_length(), которая:
+Просит пользователя ввести 1 слово не короче 3 символов.
+
+Если какое-то слово короче — вывести сообщение
+"Ошибка: все слова должны быть длиной не меньше 3 символов!"
+и попросить ввести снова.
+
+Если все слова достаточно длинные — вывести
+"Все слова приняты!" и завершить программу (break).
+"""
+
+# def check_words_length():
+#     list_final = []
+#
+#     while len(list_final) < 3:
+#         word = input(f"Введите слово не меньше 3 букв: ")
+#         if len(word) < 3:
+#             print("Ошибка: слово слишком короткое!")
+#             continue
+#         else:
+#             list_final.append(word)
+#
+#     print("Ваши слова приняты:", list_final)
+#
+# check_words_length()
+
+
+
+
 
 
