@@ -87,8 +87,8 @@
 # print(a)
 
 
-# lst = [1 for x in range(11)]
-# print(lst)
+lst = [1 for x in range(11)]
+print(lst)
 #
 # b = [1] * 7
 # print(b)
