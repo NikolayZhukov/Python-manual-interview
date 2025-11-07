@@ -77,18 +77,129 @@ from requests.compat import integer_types
 Если всё хорошо — выведи "Вы ввели число X".
 """
 
-def validate_input():
+"""
+1 способ - с breake
+"""
+# def validate_input():
+#     while True:
+#         try:
+#             user_input = int(input('Введите любое целое число: '))
+#             break
+#         except ValueError:
+#             print(f'Ошибка: введите целое число!')
+#     return f'Вы ввели число {user_input}'
+#
+# print(validate_input())
+
+
+"""
+2 способ - с continue
+"""
+# def validate_input():
+#     while True:
+#         try:
+#             user_input = input('Введите любое целое число: ')
+#             user_input = int(user_input)
+#         except ValueError:
+#             print(f'Ошибка: введите целое число!')
+#             continue
+#         else:
+#             return f'Вы ввели число {user_input}'
+#
+# print(validate_input())
+
+"""
+3 способ - без цикла while, с рекурсией (то есть функция вызывает саму себя)
+"""
+# def validate_input():
+#         try:
+#             user_input = input('Введите любое целое число: ')
+#             user_input = int(user_input)
+#         except ValueError:
+#             print(f'Ошибка: введите целое число!')
+#             return validate_input()
+#         else:
+#             return f'Вы ввели число {user_input}'
+#
+# print(validate_input())
+
+
+"""
+Напиши функцию get_positive_number(), которая:
+Просит пользователя ввести число (целое или вещественное).
+Если пользователь вводит не число — вывести сообщение:
+"Ошибка: введите число!"
+и попросить ввести заново.
+
+Если число отрицательное или равно нулю — вывести сообщение:
+"Ошибка: нужно положительное число!"
+и попросить ввести снова.
+
+Когда введено корректное положительное число —
+вывести "Ваше число: X" и завершить работу.
+"""
+# def get_positive_number():
+#     while True:
+#         try:
+#             user_input = float(input('Введите любое число: '))
+#             if user_input > 0 and user_input != 0:
+#                 break
+#             else:
+#                 print(f'Ошибка: введите число больше ноля и не равное нолю')
+#         except ValueError:
+#             print(f'Ошибка: введите число больше нуля и не равное нулю')
+#     print(f'Вы ввели число {user_input}')
+#
+# get_positive_number()
+
+
+"""
+Задание:
+Напиши функцию get_password(), которая:
+
+Просит пользователя ввести пароль.
+
+Если длина пароля меньше 8 символов, вывести сообщение:
+"Ошибка: пароль слишком короткий!"
+Если длина пароля больше 20 символов, вывести сообщение:
+"Ошибка: пароль слишком длинный!"
+и попросить ввести снова.
+
+Когда пароль подходит под оба условия — вывести сообщение:
+"Пароль принят!" и завершить программу.
+"""
+
+"""
+1 способ
+"""
+def get_password():
     while True:
-        try:
-            user_input = input('Введите любое целое число: ')
-            user_input = int(user_input)
-        except ValueError:
-            print(f'Ошибка: введите целое число!')
-            continue
+        password_input = input("Введите пароль от 8 до 20 символов: ")
+        if len(password_input) < 8:
+            print("Ошибка: пароль слишком короткий!")
+        elif len(password_input) > 20:
+            print("Ошибка: пароль слишком длинный!")
         else:
-            return f'Вы ввели число {user_input}'
+            print("Пароль принят!")
+            break
 
-print(validate_input())
+get_password()
 
+"""
+2 способ - двойная проверка, излишне, но работает
+"""
+# def get_password():
+#     while True:
+#         password_input = input("Введите пароль от 8 до 20 символов: ")
+#         if 8 <= len(password_input) <= 20:
+#             break
+#         else:
+#             if len(password_input) < 8:
+#                 print("Ошибка: пароль слишком короткий!")
+#             if len(password_input) > 20:
+#                 print("Ошибка: пароль слишком длинный!")
+#     print("Пароль принят!")
+#
+# get_password()
 
 
