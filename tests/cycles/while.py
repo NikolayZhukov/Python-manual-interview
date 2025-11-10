@@ -5,6 +5,9 @@
 Процесс останавливается, когда пользователь вводит слово "стоп". 
 После этого программа выводит сумму всех введенных чисел.
 """
+"""
+1 способ
+"""
 # total = 0
 #
 # while True:
@@ -22,6 +25,24 @@
 #
 # print(f"Сумма всех введенных чисел: {total}")
 
+"""
+2 способ
+"""
+# stop_word = 'стоп'
+# numbers = []
+# while True:
+#     user_input = input('Введите целое число или "стоп": ')
+#     if user_input.lower() == stop_word:
+#         break
+#     try:
+#         user_input = int(user_input)
+#     except ValueError:
+#         print('Ошибка')
+#         continue
+#     else:
+#         numbers.append(int(user_input))
+#
+# print(f'Сумма = {sum(numbers)}')
 
 """
 Программа загадывает случайное число от 1 до 10. 

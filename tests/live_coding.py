@@ -1,19 +1,30 @@
 """"""
 """
-1.6. Создайте список с помощью функции range, состоящий из чисел от 1 до 10.
-В ответе выведите сам список и количество содержащихся в нём чётных чисел.
+Программа загадывает случайное число от 1 до 10. 
+Пользователь должен угадать его. 
+На каждой попытке программа подсказывает, больше или меньше названное число загаданного. 
+Цикл продолжается, пока число не будет угадано. 
+В конце выводится количество попыток.
 """
+secret_number = 7
+attempts = 0
+while True:
+    attempts += 1
+    try:
+        user_guess = int(input('Введите целое число: '))
+        if user_guess < secret_number:
+            print('Больше!')
+        else:
+            print('Меньше!')
+    except ValueError:
+        print('Ошибка')
+        continue
+    else:
+        if user_guess == secret_number:
+            break
 
-# numbers = [i for i in range(1,11)]
-# even_list = [i for i in numbers if i % 2 == 0]
-# even_sum = len(even_list)
-# print(numbers)
-# print(even_sum)
-
-
-
-
-
+print(f'Угадал! Секретное число = {secret_number}')
+print(f'{attempts} попытки!')
 
 
 
