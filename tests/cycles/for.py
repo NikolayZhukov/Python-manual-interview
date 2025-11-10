@@ -446,7 +446,15 @@ words = ["яблоко", "кот", "программирование", "соба
 Иван ведет учет своего ежедневного заработка. У него есть список, где записано, 
 сколько денег он заработал каждый день недели. Однако некоторые дни он забывал делать записи,
 и вместо суммы у него стоит None.
+daily_earnings = [1200, None, 800, None, 1500, 2000, 1800]
 """
+
+"""
+Лучшее решение
+"""
+# daily_earnings = [1200, None, 800, None, 1500, 2000, 1800]
+# sum_week = [i for i in daily_earnings if type(i) == int]
+# print(sum(sum_week))
 
 "1-й способ"
 # daily_earnings = [1200, None, 800, None, 1500, 2000, 1800]
@@ -473,6 +481,9 @@ words = ["яблоко", "кот", "программирование", "соба
 1.6. Создайте список с помощью функции range, состоящий из чисел от 1 до 10. 
 В ответе выведите сам список и количество содержащихся в нём чётных чисел.
 """
+"""
+1 способ
+"""
 # lst = list(range(1, 11))
 # num_even = 0
 # for num in lst:
@@ -481,10 +492,25 @@ words = ["яблоко", "кот", "программирование", "соба
 # print(lst)
 # print(num_even)
 
+"""
+2 способ
+"""
+# numbers = [i for i in range(1,11)]
+# even_list = [i for i in numbers if i % 2 == 0]
+# even_sum = len(even_list)
+# print(numbers)
+# print(even_sum)
 
-
-
-
+"""
+3 способ
+"""
+# numbers = list(range(1,11))
+# even_list = []
+# for i in numbers:
+#     if i % 2 == 0:
+#         even_list.append(i)
+# print(numbers)
+# print(len(even_list))
 
 
 
