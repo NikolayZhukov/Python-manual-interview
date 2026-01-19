@@ -13,11 +13,11 @@ POST
 """
 
 
-base_url = 'https://petstore.swagger.io/v2/pet/'
+BASE_URL = 'https://petstore.swagger.io/v2/pet/'
 pet_id = 333125
 
 def update_pet_put_request():
-    url = f'{base_url}'
+    url = f'{BASE_URL}'
     body = {
         "id": pet_id,
         "category": {

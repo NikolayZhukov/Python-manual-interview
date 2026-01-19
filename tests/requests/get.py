@@ -1,7 +1,7 @@
 import requests
 import uuid
 
-base_url = 'https://petstore.swagger.io/v2/pet/'
+BASE_URL = 'https://petstore.swagger.io/v2/pet/'
 pet_id = 333125
 
 """
@@ -27,7 +27,7 @@ GET
 
 
 def find_pet_by_id():
-    url = f'{base_url}{pet_id}'
+    url = f'{BASE_URL}{pet_id}'
     response = requests.get(url)
 
     payload = response.json()

@@ -5,7 +5,7 @@ pet_id = 333125
 
 
 def delete_pet_by_id():
-    url = f'{}{pet_id}'
+    url = f'{BASE_URL}{pet_id}'
     response = requests.delete(url)
     payload = response.json()
     print(response.json())

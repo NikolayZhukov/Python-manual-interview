@@ -26,34 +26,22 @@ class TestPetStoreRequests():
 
         response = requests.post(self.url, json=body)
         assert response.status_code == 200
-        print('\Response JSON:', response.json())
+        print('\nResponse JSON:', response.json())
 
-    def add_new_pet(self):
-        url = f'{BASE_URL}'
-        body = {
-            "id": pet_id,
-            "category": {
-                "id": 0,
-                "name": "string"
-            },
-            "name": "Dog Test 1",
-            "photoUrls": [
-                "string"
-            ],
-            "tags": [
-                {
-                    "id": 0,
-                    "name": "string"
-                }
-            ],
-            "status": "available"
+    def test_update_pet_form_data(self):
+        self.url = f'{BASE_URL}{pet_id}'
+        data = {
+            "name": "New Name 2"
         }
 
-        response = requests.post(url, json=body)
+        response = requests.post(self.url, data=data)
+        print(f'\nupdate_form_data: {response.json()}')
         assert response.status_code == 200
-        print('\nResponse JSON:\n', response.json())
 
-    add_new_pet()
+
+
+
+
 
 
 
