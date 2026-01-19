@@ -17,6 +17,7 @@ GET
 со названием ключа - payload["category"]["id"]
 8. Если нужно получить значение ключа словаря, который находится внутри списка, то ещё по середине 
 добавляем индекс - если список всегод один, то индекс тоже нужен и он будет равен нулю - payload["tags"][0]["id"] 
+9. Запуск через find_pet_by_id()
 """
 
 
@@ -37,14 +38,15 @@ def find_pet_by_id():
     # print(f'encoding = {response.encoding}')
     # print(f'cookies = {response.cookies}')
 
-    print(payload)
+    # print(payload)
     # print(f'payload_id: {payload["id"]}')
     # print(f'payload_name: {payload["name"]}')
     # print(f'payload_tags: {payload["tags"]}')
-    print(f'payload_tags_id: {payload["tags"][0]["id"]}')
-    print(f'payload_category_id: {payload["category"]["id"]}')
+    # print(f'payload_tags_id: {payload["tags"][0]["id"]}')
+    # print(f'payload_category_id: {payload["category"]["id"]}')
 
     # assert response.status_code == 200
+    # return f'payload_category_id: {payload["category"]["id"]}'
 
-if __name__ == "__main__":
-    find_pet = find_pet_by_id()
+# print(find_pet_by_id())
+find_pet_by_id()

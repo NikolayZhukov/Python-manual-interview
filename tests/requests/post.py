@@ -4,22 +4,20 @@ unique_value = uuid.uuid4().hex
 
 """
 POST
-1. self - в скобочках
-2. название - через нижнее подчёркивание
-3. тело запроса - body
-4. переменная response
-5. из класса requests используем встроенный метод post 
-6. у метода post должно быть два аргумента: 1) self.url 2) json=body
-7. у reponse есть методы через точку - status_code, json()
+1. Название функции - через нижнее подчёркивание
+2. Тело запроса - body
+3. Переменная response
+4. Из класса requests используем встроенный метод post 
+5. У метода post должно быть два аргумента: 1) url 2) json=body
+6. У reponse есть методы через точку - status_code, json()
 """
 
 
 base_url = 'https://petstore.swagger.io/v2/pet/'
 
 
-
-def test_add_new_pet(self):
-    self.url = f'{base_url}'
+def test_add_new_pet():
+    url = f'{base_url}'
     body = {
             "id": 333125,
             "category": {
@@ -39,6 +37,6 @@ def test_add_new_pet(self):
             "status": "available"
         }
 
-    response = requests.post(self.url, json=body)
+    response = requests.post(url, json=body)
     assert response.status_code == 200
     print('\nResponse JSON:\n', response.json())
