@@ -13,13 +13,13 @@ POST
 """
 
 
-base_url = 'https://petstore.swagger.io/v2/pet/'
-id = 333125
+BASE_URL = 'https://petstore.swagger.io/v2/pet/'
+pet_id = 333125
 
 def add_new_pet():
-    url = f'{base_url}'
+    url = f'{BASE_URL}'
     body = {
-            "id": id,
+            "id": pet_id,
             "category": {
                 "id": 0,
                 "name": "string"
@@ -44,14 +44,14 @@ def add_new_pet():
 add_new_pet()
 
 
-def update_pet_form_data():
-    url = f'{base_url}{id}'
-    data = {
-        "name": "New Name 2"
-    }
-
-    response = requests.post(url, data=data)
-    print(f'update_form_data: {response.json()}')
-    assert response.status_code == 200
-
-update_pet_form_data()
+# def update_pet_form_data():
+#     url = f'{BASE_URL}{id}'
+#     data = {
+#         "name": "New Name 2"
+#     }
+#
+#     response = requests.post(url, data=data)
+#     print(f'update_form_data: {response.json()}')
+#     assert response.status_code == 200
+#
+# update_pet_form_data()
