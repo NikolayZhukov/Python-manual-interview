@@ -1,24 +1,5 @@
-""""""
-"""
- Программа запрашивает у пользователя слова до тех пор, пока он не введет слово "стоп", регистронезависимо. 
- После этого выводится количество введенных слов и сами слова.
-"""
-words = []
-while True:
-    user_input = input()
-    if user_input.lower() == "стоп":
-        break
-    else:
-        words.append(user_input)
-
-print(len(words), *words)
-
-
-
-
-
-
-
-
-
-
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+# list1.extend(list2)
+list1.append(list2)
+print(list1)
