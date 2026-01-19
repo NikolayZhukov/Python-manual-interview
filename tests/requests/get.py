@@ -1,6 +1,6 @@
 import requests
 import uuid
-# hex возвращает строку из цифр и букв
+unique_value = uuid.uuid4().hex
 
 """
 POST
