@@ -10,21 +10,23 @@
 """
 
 
-""" 1. Структура декораторов: 
-- без передачи аргументов в декораторы, 
-- здесь аргументы передаются только в саму декорируемую функцию"""
+""" 
+1. Структура декораторов: 
+- без передачи аргументов в декораторы
+- здесь аргументы передаются только в саму декорируемую функцию
+"""
 
 
-def uppercase(func):
-    def wrapper():
-        return func().upper()
-    return wrapper
-
-@uppercase
-def hello():
-    return "hello"
-
-print(hello())
+# def uppercase(func):
+#     def wrapper():
+#         return func().upper()
+#     return wrapper
+#
+# @uppercase
+# def hello():
+#     return "hello"
+#
+# print(hello())
 
 
 # def decorator_func(func):
@@ -48,7 +50,7 @@ print(hello())
 
 """ 2. Два способа декорирования функции"""
 
-"""1 способ - передать саму функцию в декоратор (без скобочек и аргументов)"""
+"""1 способ - в момент вызова передать саму функцию в декоратор (без скобочек и аргументов)"""
 # def decorator_func(func):
 #     def wrapper_func(a, b):
 #         result = func(a, b)
@@ -137,51 +139,52 @@ print(hello())
 
 """ 5. Декоратор метода в классе - с передачей self"""
 
-# def decorator_func(func):
-#     def wrapper_func(self, a, b):
-#         print(f'--- Прямоугольник {self.color} ---')
-#         print('До декорируемой функции')
-#         result = func(self, a, b)
-#         print('Результат = ', result)
-#         print('После декорируемой функции')
-#         return result
-#     return wrapper_func
-#
-#
-# class Rectangle:
-#     def __init__(self, color):
-#         self.length = None
-#         self.width = None
-#         self.color = color
-#
-#     def input_dimensions(self):
-#         print(f"\nВведите размеры для {self.color} прямоугольника:")
-#         self.length = int(input("Длина: "))
-#         self.width = int(input("Ширина: "))
-#
-#     @decorator_func
-#     def calculate_area_rectangle(self, length, width):
-#         return length * width
-#
-#     def calculate_area(self):
-#         return self.calculate_area_rectangle(self.length, self.width)
-#
-#
-# # Запрос у пользователя количества прямоугольников
-# num_rectangles = int(input("Сколько прямоугольников хотите создать? "))
-#
-# rectangles = []
-#
-# for i in range(num_rectangles):
-#     color = input(f"\nВведите цвет {i+1}-го прямоугольника: ")
-#     rect = Rectangle(color)
-#     rect.input_dimensions()
-#     rectangles.append(rect)
-#
-# # Вызовы
-# for rect in rectangles:
-#     # rect.calculate_area()
-#     rect.calculate_area_rectangle(rect.length, rect.width)
+def decorator_func(func):
+    def wrapper_func(self, a, b):
+        print(f'--- Прямоугольник {self.color} ---')
+        print('До декорируемой функции')
+        result = func(self, a, b)
+        print('Результат = ', result)
+        print('После декорируемой функции')
+        return result
+    return wrapper_func
+
+
+class Rectangle:
+    def __init__(self, color):
+        self.length = None
+        self.width = None
+        self.color = color
+
+    def input_dimensions(self):
+        print(f"\nВведите размеры для {self.color} прямоугольника:")
+        self.length = int(input("Длина: "))
+        self.width = int(input("Ширина: "))
+
+    @decorator_func
+    def calculate_area_rectangle(self, length, width):
+        return length * width
+
+    def calculate_area(self):
+        return self.calculate_area_rectangle(self.length, self.width)
+
+
+# Запрос у пользователя количества прямоугольников
+num_rectangles = int(input("Сколько прямоугольников хотите создать? "))
+
+rectangles = []
+
+for i in range(num_rectangles):
+    color = input(f"\nВведите цвет {i+1}-го прямоугольника: ")
+    rect = Rectangle(color)
+    rect.input_dimensions()
+    rectangles.append(rect)
+
+# Вызовы
+for rect in rectangles:
+    rect.calculate_area()
+    """либо"""
+    # rect.calculate_area_rectangle(rect.length, rect.width)
 
 
 
@@ -387,10 +390,46 @@ print(hello())
 #
 # calculate_area_rectangle(user_input_length, user_input_width)
 
+"""
+ЗАДАЧКИ
+"""
 
+"""
+Задание 4: Декоратор для обратного текста
+Создай декоратор @reverse, который переворачивает строку задом наперед.
+"""
+"""
+1 способ
+"""
+# def reverse_str_decorator(func):
+#     def wrapper():
+#         text = func()
+#         return text[::-1]
+#     return wrapper
+#
+# @reverse_str_decorator
+# def get_string():
+#     user_input = input('Введите любой текст: ')
+#     return user_input
+#
+# print(get_string())
 
-
-
+"""
+2 способ
+"""
+# def reverse_str_decorator(func):
+#     def wrapper():
+#         text = func()
+#         text = ''.join(reversed(text))
+#         return text
+#     return wrapper
+#
+# @reverse_str_decorator
+# def get_string():
+#     user_input = input('Введите любой текст: ')
+#     return user_input
+#
+# print(get_string())
 
 
 
