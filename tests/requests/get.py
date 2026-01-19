@@ -21,6 +21,8 @@ GET
    1) find_pet_by_id()
    2) print(find_pet_by_id()) - но в этом случае нужно в return указывать что возвращает
    3) if __name__ == '__main__': find_pet_by_id()
+   4) Либо просто добавить в названии функции слово test_ и убрать find_pet_by_id(), но должен быть 
+   установлен pytest 
 """
 
 
