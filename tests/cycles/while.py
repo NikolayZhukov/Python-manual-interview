@@ -44,6 +44,17 @@
 #
 # print(f'Сумма = {sum(numbers)}')
 
+"""3 способ"""
+# sum_num = 0
+# while True:
+#     input_word = input("Введите число или слово 'стоп': ")
+#     if input_word == 'стоп':
+#         print(sum_num)
+#         break
+#     else:
+#         sum_num += int(input_word)
+
+
 """
 Программа загадывает случайное число от 1 до 10. 
 Пользователь должен угадать его. 
@@ -58,11 +69,11 @@
 # attempts = 0
 # guess = None
 #
-# print("Я загадал число от 1 до 10. Попробуй угадать!")
+# print("Я загадал число от 1 до 10. Попробуйте угадать!")
 #
 # while guess != secret_number:
 #     try:
-#         guess = int(input("Твоя догадка: "))
+#         guess = int(input("Ваша догадка: "))
 #         attempts += 1
 #
 #         if guess < secret_number:
@@ -70,11 +81,11 @@
 #         elif guess > secret_number:  # заменил if на elif
 #             print("Мое число меньше.")
 #         else:
-#             print(f"Поздравляю! Ты угадал с {attempts}-й попытки!")
-#             break  # добавляем break для остановки игры
+#             print(f"Поздравляю! Вы угадали с {attempts}-й попытки!")
+#             break
 #
 #     except ValueError:
-#         print("Пожалуйста, вводи только целые числа!")
+#         print("Пожалуйста, введите только целые числа!")
 
 
 
