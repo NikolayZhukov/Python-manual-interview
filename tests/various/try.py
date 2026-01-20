@@ -7,19 +7,19 @@ from datetime import datetime
 
 
 """Пример использования raise ValueError без pytest"""
-# def calculate_age(birth_year):
-#     if birth_year > 2024:
-#         raise ValueError("Год рождения не может быть в будущем")
-#     if birth_year < 1800:
-#         raise ValueError("Слишком старый год рождения")
-#
-#     return 2024 - birth_year
-#
-# try:
-#     age = calculate_age(2025)
-#     print(f'Ваш возраст - {age}')
-# except ValueError as e:
-#     print(f"Ошибка: {e}")
+def calculate_age(birth_year):
+    if birth_year > 2024:
+        raise ValueError("Год рождения не может быть в будущем")
+    if birth_year < 1800:
+        raise ValueError("Слишком старый год рождения")
+
+    return 2024 - birth_year
+
+try:
+    age = calculate_age(2025)
+    print(f'Ваш возраст - {age}')
+except ValueError as e:
+    print(f"Ошибка: {e}")
 
 
 

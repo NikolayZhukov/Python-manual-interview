@@ -16,24 +16,24 @@ def test_sum(sample_data):
 
 
 
-# def divide(a, b):
-#     if b == 0:
-#         raise ValueError("Делитель не может быть равен нулю")
-#     return a / b
-#
-#
-# def test_divide_by_zero():
-#     with pytest.raises(ValueError) as exc_info:
-#         divide(10, 0)
-#     print(str(exc_info.value))
-#
-#     # Проверка текста сообщения об ошибке
-#     assert str(exc_info.value) == "Делитель не может быть равен нулю"
-#
-#
-# def test_divide_success():
-#     result = divide(10, 2)
-#     assert result == 5
+def divide(a, b):
+    if b == 0:
+        raise ValueError("Делитель не может быть равен нулю")
+    return a / b
+
+
+def test_divide_by_zero():
+    with pytest.raises(ValueError) as exc_info:
+        divide(10, 0)
+    print(str(exc_info.value))
+
+    # Проверка текста сообщения об ошибке
+    assert str(exc_info.value) == "Делитель не может быть равен нулю"
+
+
+def test_divide_success():
+    result = divide(10, 2)
+    assert result == 5
 
 
 

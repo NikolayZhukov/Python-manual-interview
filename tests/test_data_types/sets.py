@@ -1,9 +1,9 @@
 
 """симметричная разность"""
-setA = {1,2,3,4}
-setB = {3,4,5,6,7}
-setC = setA ^ setB
-print(setC)
+# setA = {1,2,3,4}
+# setB = {3,4,5,6,7}
+# setC = setA ^ setB
+# print(setC)
 
 
 
@@ -82,6 +82,7 @@ print(setC)
 # numbers_set = set(numbers_list)
 # for i in numbers_set:
 #     print(i)
+# print(numbers_set)
 
 # numbers = {1,2,3,7,99,81,83,111,54,17,'asd'}
 # # print(5 in numbers)

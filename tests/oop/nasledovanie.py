@@ -3,26 +3,26 @@
 Наследование + абстракция + полиморфизм
 """
 
-# class Animal:
-#     def __init__(self, name):
-#         self.name = name
-#
-#     def speak(self):
-#         raise NotImplementedError("Subclass must implement abstract method")
-#
-# class Dog(Animal):
-#     def speak(self):
-#         return f"{self.name} says Woof!"
-#
-# class Cat(Animal):
-#     def speak(self):
-#         return f"{self.name} says Meow!"
-#
-# dog = Dog("Бобик")
-# cat = Cat("Маруся")
-#
-# print(dog.speak())  # Buddy says Woof!
-# print(cat.speak())  # Whiskers says Meow!
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        raise NotImplementedError("Subclass must implement abstract method")
+
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} says Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return f"{self.name} says Meow!"
+
+dog = Dog("Бобик")
+cat = Cat("Маруся")
+
+print(dog.speak())  # Buddy says Woof!
+print(cat.speak())  # Whiskers says Meow!
 
 
 """
@@ -44,7 +44,7 @@ class Car:
 
 class ElectricCar(Car):
     def __init__(self, model, year, comment, color):
-        super().__init__(model, year, 'Электричество', comment,color)
+        super().__init__(model, year, 'Электричество', comment, color)
 
     def calculate_price(self):
         price = 50000 - ((2025 - self.year) * 1000)

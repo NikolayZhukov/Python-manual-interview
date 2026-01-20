@@ -60,18 +60,21 @@
 """sort"""
 # words = ["apple", "ant", "banana", "avocado", "axe", "air", "alpha"]
 # words_filtered = [x for x in words if x[0] == 'a' and len(x) > 3]
-# words_filtered.sort()
+# # words_filtered.sort()
 # print(words_filtered)
 
 """
 sorted - САМЫЙ ПИТОНОВСКИЙ СПОСОБ, т.к.: 
 1) list comprehension, а не lambda (немного устаревший, менее читаемый) 
-2) sorted, а не sort, т.к. создаёт новый список, а не меняет исходный, работает не только со списками
+2) sorted, а не sort, т.к. создаёт новый список, а не меняет исходный, работает 
+не только со списками
 """
 
 # words = ["apple", "ant", "banana", "avocado", "axe", "air", "alpha"]
 # words_filtered = sorted([x for x in words if x[0] == 'a' and len(x) > 3])
+# words_filtered1 = [x for x in words if x[0] == 'a' and len(x) > 3]
 # print(words_filtered)
+# print(words_filtered1)
 
 # words = ["apple", "ant", "banana", "avocado", "axe", "air", "alpha"]
 # words_filtered = sorted([x for x in words if x[0] == 'a' and len(x) > 3])
@@ -80,7 +83,8 @@ sorted - САМЫЙ ПИТОНОВСКИЙ СПОСОБ, т.к.:
 
 """
 Дан список слов: words = ["apple", "ant", "banana", "avocado", "axe", "air", "alpha"]
-Оставь только те слова, которые начинаются с буквы “a”, имеют длину больше 3 символов и отсортируй их по длине по возрастанию.
+Оставь только те слова, которые начинаются с буквы “a”, имеют длину больше 3 символов 
+и отсортируй их по длине по возрастанию.
 """
 # words = ["apple", "ant", "banana", "avocado", "axe", "air", "alpha"]
 # words_filtered = sorted([x for x in words if x[0] == 'a' and len(x) > 3], key=len)
