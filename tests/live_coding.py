@@ -1,30 +1,17 @@
-import requests
-import pytest
+""""""
+"""
+1.6. Создайте список с помощью функции range, состоящий из чисел от 1 до 10. 
+В ответе выведите сам список и количество содержащихся в нём чётных чисел.
+"""
+num_even = 0
+list = [i for i in range(1, 11)]
+for i in list:
+    if i % 2 == 0:
+        num_even += 1
 
-base_url = 'https://petstore.swagger.io/v2/pet/'
+print(list)
+print(num_even)
 
-class TestAddNewPet:
-    def test_add_new_pet(self):
-        self.url = f'{base_url}'
-        body = {
-                "id": 333125,
-                "category": {
-                    "id": 0,
-                    "name": "string"
-                },
-                "name": "Dog Test 1",
-                "photoUrls": [
-                    "string"
-                ],
-                "tags": [
-                    {
-                        "id": 0,
-                        "name": "string"
-                    }
-                ],
-                "status": "available"
-            }
 
-        response = requests.post(self.url, json=body)
-        assert response.status_code == 200
-        print('\nResponse JSON:\n', response.json())
+
+
