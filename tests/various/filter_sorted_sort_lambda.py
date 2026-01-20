@@ -4,7 +4,7 @@
 # even = filter(lambda x: x % 2 == 0, numbers)
 # print(list(even))
 #
-"""'это эквивалентно"""
+"""это эквивалентно"""
 # numbers = [1, 5, 3, 4, 2, 6]
 # even = []
 # for x in numbers:
@@ -71,14 +71,14 @@ sorted - САМЫЙ ПИТОНОВСКИЙ СПОСОБ, т.к.:
 """
 
 # words = ["apple", "ant", "banana", "avocado", "axe", "air", "alpha"]
-# words_filtered = sorted([x for x in words if x[0] == 'a' and len(x) > 3])
-# words_filtered1 = [x for x in words if x[0] == 'a' and len(x) > 3]
-# print(words_filtered)
-# print(words_filtered1)
+# words_sorted = sorted([x for x in words if x[0] == 'a' and len(x) > 3])
+# words_sorted1 = [x for x in words if x[0] == 'a' and len(x) > 3]
+# print(words_sorted)
+# print(words_sorted1)
 
 # words = ["apple", "ant", "banana", "avocado", "axe", "air", "alpha"]
-# words_filtered = sorted([x for x in words if x[0] == 'a' and len(x) > 3])
-# print(words_filtered)
+# words_sorted = sorted([x for x in words if x[0] == 'a' and len(x) > 3])
+# print(words_sorted)
 
 
 """
