@@ -1,7 +1,8 @@
 from logging import raiseExceptions
 
 import pytest
-from requests.compat import integer_types
+import requests
+# from requests.compat import integer_types
 
 """
 Чем отличаются:
@@ -31,17 +32,17 @@ from requests.compat import integer_types
 #     else:
 #         return result
 #
-# print(divide(8, 0))
+# print(divide(8, 1))
 
 
 
 
 
-# # PYTEST
+# PYTEST
 # def divide(a, b):
-#     # if b == 0:
+#     if b == 0:
 #         # raise ValueError("Деление на ноль не допускается")
-#         # raise Exception("Деление на ноль не допускается")
+#         raise Exception("Деление на ноль не допускается")
 #     return a / b
 #
 # # Тест с использованием pytest.raises
