@@ -16,7 +16,7 @@
 - здесь аргументы передаются только в саму декорируемую функцию
 """
 
-
+#
 # def uppercase(func):
 #     def wrapper():
 #         return func().upper()
@@ -66,8 +66,8 @@
 # def calculate_area_rectangle(length, width):
 #     return length * width
 #
-# calculate_area_rectangle = decorator_func(calculate_area_rectangle)
-# calculate_area_rectangle(user_input_length, user_input_width)
+# calculate_area_rectangle_decorated = decorator_func(calculate_area_rectangle)
+# calculate_area_rectangle_decorated(user_input_length, user_input_width)
 
 
 """2 способ - с помощью @decorator_function над декорируемой функцией"""
@@ -170,7 +170,7 @@ class Rectangle:
 
 
 # Запрос у пользователя количества прямоугольников
-num_rectangles = int(input("Сколько прямоугольников хотите создать? "))
+num_rectangles = int(input("Сколько прямоугольников хотите создать?: "))
 
 rectangles = []
 
@@ -184,7 +184,7 @@ for i in range(num_rectangles):
 for rect in rectangles:
     rect.calculate_area()
     """либо"""
-    # rect.calculate_area_rectangle(rect.length, rect.width)
+    rect.calculate_area_rectangle(rect.length, rect.width)
 
 
 
