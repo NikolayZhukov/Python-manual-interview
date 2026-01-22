@@ -1,43 +1,15 @@
-''' '''
+from pathlib import Path
 
-# try:
-#     with open('out.txt','a+') as file:
-#         file.seek(0)
-#         s = file.readline()
-#         print(s)
-# except:
-#     print('Ошибка при работе с файлом')
+p = Path('out.txt')
+absolute_path = p.resolve()                     #/home/nikolay/PycharmProjects/MDM/tests - путь до текущей директории
+parent_dir = p.resolve().parent                 #/home/nikolay/PycharmProjects/MDM - путь до родительской директории
+parent_parent_dir = p.resolve().parent.parent   #/home/nikolay/PycharmProjects
 
-
-"""Записывает данные в бинарном режиме доступа"""
-
-# import pickle
-#
-# book1 = ["Евгений Онегин", "Пушкин А.С.", 200]
-# book2 = ["Муму", "Тургенев И.С.", 250]
-# book3 = ["Мастер и Маргарита", "Булгаков М.А.", 500]
-# book4 = ["Мертвые души", "Гоголь Н.В.", 190]
-#
-# try:
-#     with open("out.bin", "wb") as file:
-#         pickle.dump(book1, file)
-#         pickle.dump(book2, file)
-#         pickle.dump(book3, file)
-#         pickle.dump(book4, file)
-# except:
-#     print("Ошибка при работе с файлом")
+# print(absolute_path)
+print(p.read_text())
 
 
-"""Считывает данные в бинарном режиме доступа"""
-# import pickle
-#
-# try:
-#     with open("out.bin", "rb") as file:
-#         b1 = pickle.load(file)
-#         b2 = pickle.load(file)
-#         b3 = pickle.load(file)
-#         b4 = pickle.load(file)
-# except:
-#     print("Ошибка при работе с файлом")
-#
-# print(b1, b2, b3, b4, sep="\n")
+"""
+1) resolve() - это встроенный метод класса Path в модуле pathlib, делает путь абсолютным
+2) path() без resolve() - возвращает относительный путь
+"""

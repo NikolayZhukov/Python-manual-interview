@@ -17,7 +17,16 @@
 
 """
 1) Используя распаковку в цикле, вычислите средний балл каждого студента
+students_grades = [
+#     ("Алексей", "математика", 85, 92, 78),
+#     ("Мария", "физика", 90, 88, 95),
+#     ("Иван", "информатика", 76, 85, 80),
+#     ("Елена", "математика", 92, 96, 89),
+#     ("Дмитрий", "физика", 82, 79, 85)
+# ]
 """
+
+"""1 способ"""
 # students_grades = [
 #     ("Алексей", "математика", 85, 92, 78),
 #     ("Мария", "физика", 90, 88, 95),
@@ -30,8 +39,30 @@
 #     avg_grade = sum(grades) / len(grades)
 #     print(f"{name} ({subject}): {avg_grade:.1f}")
 
+"""2 способ"""
+# students_grades = [
+#     ("Алексей", "математика", 85, 92, 78),
+#     ("Мария", "физика", 90, 88, 95),
+#     ("Иван", "информатика", 76, 85, 80),
+#     ("Елена", "математика", 92, 96, 89),
+#     ("Дмитрий", "физика", 82, 79, 85)
+# ]
+#
+#
+# for name, subject, point1, point2, point3 in students_grades:
+#     medium = (point1 + point2 + point3) / 3
+#     print(f'Имя: {name}\nПредмет: {subject}\nСредний балл: {medium}')
+#     print("-" * 20)
+
 """
 2) Отсортируйте студентов по среднему баллу (по убыванию)
+# students_grades = [
+#     ("Алексей", "математика", 85, 92, 78),
+#     ("Мария", "физика", 90, 88, 95),
+#     ("Иван", "информатика", 76, 85, 80),
+#     ("Елена", "математика", 92, 96, 89),
+#     ("Дмитрий", "физика", 82, 79, 85)
+# ]
 """
 students_grades = [
     ("Алексей", "математика", 85, 92, 78),
@@ -40,18 +71,18 @@ students_grades = [
     ("Елена", "математика", 92, 96, 89),
     ("Дмитрий", "физика", 82, 79, 85)
 ]
-print("\nРейтинг студентов по среднему баллу:")
-student_ratings = []
-for name, subject, *grades in students_grades:
-    avg_grade = sum(grades) / len(grades)
-    student_ratings.append((name, subject, avg_grade))
-
-sorted_students = sorted(student_ratings, key=lambda x: x[2], reverse=True)
-
-for name, subject, avg in sorted_students:
-    print(f"{name}: {avg:.1f} баллов ({subject})")
+# print("\nРейтинг студентов по среднему баллу:")
+# student_ratings = []
+# for name, subject, *grades in students_grades:
+#     avg_grade = sum(grades) / len(grades)
+#     student_ratings.append((name, subject, avg_grade))
 #
+# sorted_students = sorted(student_ratings, key=lambda x: x[2], reverse=True)
 #
+# for name, subject, avg in sorted_students:
+#     print(f"{name}: {avg:.1f} баллов ({subject})")
+
+
 # names = tuple(input().split())
 # names_list = list(names)
 # names_list = [name.lower() for name in names_list]
@@ -64,9 +95,9 @@ for name, subject, avg in sorted_students:
 # cities = tuple(input().split())
 # cities = list(cities)
 # city = 'Ульяновск'
-# cities.remove(city) if city in cities else cities
-# cities_new = tuple(cities)
-# print(*cities_new)
+# if city in cities:
+#     cities.remove(city)
+# print(*cities)
 
 
 # cities = (input().split())
