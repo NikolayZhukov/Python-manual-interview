@@ -1,4 +1,4 @@
-
+""""""
 """симметричная разность"""
 # setA = {1,2,3,4}
 # setB = {3,4,5,6,7}
@@ -53,6 +53,7 @@
 
 # s1 = list(map(float, input(). split()))
 # s = set(s1)
+# print(s)
 # print(*sorted(s))
 
 
@@ -60,7 +61,7 @@
 
 # fruits_set = {'apple', 'banana', 'cherry'}
 # print(fruits_set)
-
+#
 # numbers = {1,2,3,7,99}
 # print(type(numbers))
 #

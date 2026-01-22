@@ -35,7 +35,7 @@ class TestPetStoreRequests():
             "name": "New Name 2"
         }
 
-        response = requests.post(self.url, data=data)
+        response = requests.post(self.url, json=data)
         print(f'\nrequest_data: {data}')
         assert response.status_code == 200
 

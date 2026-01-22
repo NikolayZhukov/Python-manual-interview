@@ -1,25 +1,41 @@
-""" """
+""""""
+
+
 """
-1) Используя распаковку в цикле, вычислите средний балл каждого студента
-students_grades = [
-#     ("Алексей", "математика", 85, 92, 78),
-#     ("Мария", "физика", 90, 88, 95),
-#     ("Иван", "информатика", 76, 85, 80),
-#     ("Елена", "математика", 92, 96, 89),
-#     ("Дмитрий", "физика", 82, 79, 85)
-# ]
+DeliveryPerson
+BicycleCourier, ScooterCourier и CarCourier
+BicycleCourier = 15 min
+ScooterCourie = 8 min
+CarCourier = 18 min
 """
 
-students_grades = [
-    ("Алексей", "математика", 85, 92, 78),
-    ("Мария", "физика", 90, 88, 95),
-    ("Иван", "информатика", 76, 85, 80),
-    ("Елена", "математика", 92, 96, 89),
-    ("Дмитрий", "физика", 82, 79, 85)
-]
+class DeliveryPerson:
+    def __init__(self, name):
+        self.name = name
+
+    def calculate_time(self):
+        raise NotImplementedError('Подкласс должен реализовать метод transport')
+
+class BicycleCourier(DeliveryPerson):
+    def calculate_time(self):
+        return f'Курьер {self.name} на велосипеде доставит ваш заказ через 15 мин'
+
+class ScooterCourier(DeliveryPerson):
+    def calculate_time(self):
+        return f'Курьер {self.name} на мопеде доставит ваш заказ через 8 мин'
 
 
-for name, subject, point1, point2, point3 in students_grades:
-    medium = (point1 + point2 + point3) / 3
-    print(f'Имя: {name}\nПредмет: {subject}\nСредний балл: {medium}')
-    print("-" * 20)
+class CarCourier(DeliveryPerson):
+    def calculate_time(self):
+        return f'Курьер {self.name} на машине доставит ваш заказ через 18 мин'
+
+bicycle_courier = BicycleCourier('Иван')
+print(bicycle_courier.calculate_time())
+
+scooter_courier = ScooterCourier('Сергей')
+print(scooter_courier.calculate_time())
+
+
+
+
+

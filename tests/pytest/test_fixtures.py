@@ -12,6 +12,15 @@ def test_sum(sample_data):
     assert sum(sample_data) == 6
 
 
+@pytest.mark.parametrize("a, b, expected", [
+    (1, 2, 3),      # тест 1: 1 + 2 = 3
+    (0, 0, 0),      # тест 2: 0 + 0 = 0
+    (-1, 1, 0),     # тест 3: -1 + 1 = 0
+    (10, -5, 5),    # тест 4: 10 + (-5) = 5
+])
+def test_addition(a, b, expected):
+    result = a + b
+    assert result == expected, f"{a} + {b} должно быть {expected}, но получилось {result}"
 
 
 
@@ -38,16 +47,16 @@ def test_divide_success():
 
 
 # Простые математические функции
-# def add(a, b):
-#     return a + b
-#
-# def subtract(a, b):
-#     return a - b
-#
-# def multiply(a, b):
-#     return a * b
-#
-# # Тестируем разные функции с разнымя и параметрами
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+# Тестируем разные функции с разными параметрами
 # @pytest.mark.parametrize("func,a,b,expected", [
 #     (add, 2, 3, 5),
 #     (add, -1, 1, 0),
@@ -64,7 +73,7 @@ def test_divide_success():
 # Базовая функция для тестирования
 # def calculate(a, b, operation):
 #     if operation == 'add':
-#         return a + b
+#         return a + bинт
 #     elif operation == 'subtract':
 #         return a - b
 #     elif operation == 'multiply':

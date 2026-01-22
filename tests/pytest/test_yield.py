@@ -8,20 +8,25 @@ import os
 3) Действие после функции
 """
 
-@pytest.fixture
-def sample_data():
-    print("\n1) Выполняется фикстура перед тестом")
-    data = [1, 2, 3]
-    yield data
-    print("\n3) Выполняется фикстура после теста")
+# @pytest.fixture
+# def sample_data():
+#     print("\n1) Выполняется фикстура перед тестом")
+#     data = [1, 2, 3]
+#     yield data
+#     print("\n3) Выполняется фикстура после теста")
+#
+# def test_sum(sample_data):
+#     print("\n2) Выполняется сама функция Сумма")
+#     assert sum(sample_data) == 6
+#
+# if __name__ == "__main__":
+#     pytest.main([__file__, "-s", "-v"])
 
-def test_sum(sample_data):
-    print("\n2) Выполняется сама функция Сумма")
-    assert sum(sample_data) == 6
 
-def test_sum(sample_data):
-    print("\n2) Выполняется сама функция Сумма")
-    assert sum(sample_data) == 6
+
+# def test_sum(sample_data):
+#     print("\n2) Выполняется сама функция Сумма")
+#     assert sum(sample_data) == 6
 
 # @pytest.fixture
 # def sample_data():
@@ -59,21 +64,21 @@ def test_sum(sample_data):
 
 
 
-# @pytest.fixture
-# def temp_file():
-#     # setup: создаём временный файл
-#     filename = "temp.txt"
-#     with open(filename, "w") as f:
-#         f.write("hello")
-#
-#     # передаём имя файла в тест
-#     yield filename
-#
-#     # teardown: удаляем файл после теста
-#     if os.path.exists(filename):
-#         os.remove(filename)
-#
-#
-# def test_temp_file_exists(temp_file):
-#     # тест получает temp_file = "temp.txt"
-#     assert os.path.exists(temp_file)
+@pytest.fixture
+def temp_file():
+    # setup: создаём временный файл
+    filename = "temp.txt"
+    with open(filename, "w") as f:
+        f.write("hello")
+
+    # передаём имя файла в тест
+    yield filename
+
+    # teardown: удаляем файл после теста
+    if os.path.exists(filename):
+        os.remove(filename)
+
+
+def test_temp_file_exists(temp_file):
+    # тест получает temp_file = "temp.txt"
+    assert os.path.exists(temp_file)

@@ -32,7 +32,7 @@ import requests
 #     else:
 #         return result
 #
-# print(divide(8, 1))
+# print(divide(8, 0))
 
 
 
@@ -40,9 +40,9 @@ import requests
 
 # PYTEST
 # def divide(a, b):
-#     if b == 0:
+#     # if b == 0:
 #         # raise ValueError("Деление на ноль не допускается")
-#         raise Exception("Деление на ноль не допускается")
+#         # raise Exception("Деление на ноль не допускается")
 #     return a / b
 #
 # # Тест с использованием pytest.raises
@@ -70,10 +70,32 @@ import requests
 # print(get_age(age_user))
 
 
+# age_user = int(input())
+#
+# def get_age(age):
+#     if age < 0 or age > 120:
+#         raise ValueError('Некорректный возраст')
+#     else:
+#         return f'Ваш возраст: {age}'
+#
+# print(get_age(age_user))
+
+
+# age_user = 122
+# def verify_age_wrong():
+#     if age_user < 0 or age_user > 120:
+#         raise ValueError('Некорректный возраст')
+#     return f'Ваш возраст: {age_user}'
+#
+# def test_age():
+#     with pytest.raises(ValueError):
+#         verify_age_wrong()
+
+
 
 """
 Задание:
-Попроси пользователя ввести число, и попробуй преобразовать ввод в int.
+Попроси пользователя ввести число и попробуй преобразовать ввод в int.
 Если введено не число — выведи сообщение "Ошибка: введите целое число!".
 Если всё хорошо — выведи "Вы ввели число X".
 """
@@ -153,7 +175,7 @@ import requests
 #         except ValueError:
 #             print(f'Ошибка: введите число больше нуля и не равное нулю')
 #     print(f'Вы ввели число {user_input}')
-
+#
 # get_positive_number()
 
 
@@ -187,7 +209,7 @@ import requests
 #         else:
 #             print("Пароль принят!")
 #             break
-#
+
 # get_password()
 
 """
